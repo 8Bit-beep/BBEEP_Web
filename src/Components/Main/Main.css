@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding: 0;
+
+}
+.main{
+    display: flex;
+    position: absolute;
+    left:320px;
+    width:1580px;
+    bottom:0px;
+    height: 800px;
+    flex-direction: column;
+    background: #E4E8EF;
+    border-radius: 10px;
+
+}
+.main > div {
+    height: 80px;
+    border-radius: 10px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin:30px;
+}
+.header-bar{
+    display: flex;
+    position: absolute;
+
+    flex-direction: row;
+    left: 320px;
+    height: 100px;
+    width: 1580px;
+    background: #F6F7F9;
+    justify-content: right;
+}
+
