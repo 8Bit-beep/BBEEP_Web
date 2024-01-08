@@ -1,5 +1,5 @@
 import "../../style/Login.style/Login.css";
-import Logo from "../../img/Bbeep.svg";
+import Logo from "../../img/Logo.svg";
 import { useEffect, useState } from "react";
 import { showToast } from "../../lib/Swal/Swal";
 
@@ -61,16 +61,18 @@ const Login = () => {
   return (
     <div className="LoginWrapper">
       <div className="LoginWrap">
-        <img src={Logo} alt="" />
+        <img src={Logo} alt="" className="Logo" />
         <div className="InputWrap">
           <h1>Log in</h1>
           <input className="ID" placeholder="ID" id="id" value={id} onChange={handleID} />
           {!idValid && <div className="errorMessageWrap">ID를 입력해주세요.</div>}
           <input type="password" className="PW" placeholder="Password" id="pw" value={pw} onChange={handlePw} />
           {!pwValid && <div className="errorMessageWrap">비밀번호를 입력해주세요.</div>}
-          <button className="LoginBtn" disabled={notAllow} onClick={onClickConfirmButton}>
-            Log in
-          </button>
+          <div className="ButtonWrap">
+            <button className="LoginBtn" disabled={notAllow} onClick={onClickConfirmButton}>
+              Log in
+            </button>
+          </div>
         </div>
       </div>
     </div>

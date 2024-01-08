@@ -1,3 +1,9 @@
+* {
+
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: "SBAggroB";
   src: url("../../font/SBAggroB.woff") format("woff");
@@ -6,122 +12,89 @@
 }
 
 .LoginWrapper {
-  width: 100%;
-  height: 100vh;
-
-  background-image: url("../../img/bbeepbackground.svg");
+  display: flex;
+  background-image: url(../../img/bbeepbackground.svg);
   background-repeat: no-repeat;
   background-size: cover;
-
-  display: flex;
+  width: 100%;
+  height: 100vh;
 }
 
 .LoginWrap {
-  width: 70%;
-  height: 85%;
-  background-color: #fff;
-
+  display: flex;
   align-self: center;
   margin: 0 auto;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  border: none;
+  height: 780px;
+  width: 1200px;
   border-radius: 15px;
-}
-
-.LoginWrap > img {
-  height: 102.3%;
-  margin-left: -2.1%;
+  background-color: white;
 }
 
 .InputWrap {
   display: flex;
   flex-direction: column;
+  margin-left: 65px;
+}
+
+input {
+  padding-left: 2vw;
+
 }
 
 .InputWrap > h1 {
+  margin-top:50px;
+  margin-left: 20px;
   color: #303a46;
-  font-family: "SBAggroB";
-  font-size: 3rem;
-  font-weight: 500;
-
-  display: block;
-  margin-right: 500px;
-  margin-top: 100px;
-}
-
-.InputWrap > input {
-  width: 22vw;
-  height: 4vw;
-
-  border-radius: 20px;
-  border: 3px solid rgba(48, 58, 70, 0.77);
-  background: #f6f7f9;
-
-  padding-left: 3vw;
-
-  color: #000;
-  font-family: Sathu;
-  font-size: 20px;
+  font-family: SB AggroOTF;
+  font-size: 50px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-
-  outline: none;
+  width: 400px;
+  height: 47px;
+  flex-shrink: 0;
+  
 }
 
 .ID {
   margin-top: 100px;
+  width: 450px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 3px solid rgba(48, 58, 70, 0.77);
+  background: #f6f7f9;
 }
 
 .PW {
-  margin-top: 50px;
+  margin-top: 40px;
+  width: 450px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 3px solid rgba(48, 58, 70, 0.77);
+  background: #f6f7f9;
 }
 
-.InputWrap > input::placeholder {
-  color: #000;
-  font-family: Sathu;
+.errorMessageWrap{
+  color:red;
+}
+
+.ButtonWrap{
+  align-self:center ;
+  margin-top: 100px;
+}
+
+.LoginBtn{
+  width: 450px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #303A46;
+  color: #F6F7F9;
+  font-family: SB AggroOTF;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-
-.errorMessageWrap {
-  font-size: 1rem;
-  color: red;
-  margin-top: 10px;
-}
-
-.LoginBtn {
-  width: 450px;
-  height: 60px;
-  flex-shrink: 0;
-
-  border-radius: 30px;
-  background: #303a46;
-
-  color: #f6f7f9;
-  font-family: "SBAggroB";
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-top: 180px;
-  margin-left: 75px;
-}
-
-.LoginBtn:disabled {
-  background: #d7d7d7;
-  border: none;
-}
-
-.swalError-lg {
-  width: 300px;
-  font-size: 0.7rem;
-  display: flex;
-  flex-direction: row;
 }
