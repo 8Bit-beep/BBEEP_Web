@@ -1,5 +1,5 @@
 import "../../style/Login.style/Login.css";
-import Logo from "../../img/Bbeep.svg";
+import Logo from "../../img/Logo.svg";
 import { useEffect, useState } from "react";
 import { showToast } from "../../lib/Swal/Swal";
 
@@ -47,13 +47,13 @@ const Login = () => {
   const onClickConfirmButton = () => {
     const ID = document.getElementById("id");
     const PW = document.getElementById("pw");
-    if (id == User.id && pw == User.pw) {
-      showToast("success", "Login Sex!");
+    if (id === User.id && pw === User.pw) {
+      showToast("success", "Login");
     } else if (id !== User.id && pw === User.pw) {
-      showToast("error", "ID Sex");
+      showToast("error", "ID");
       ID.value = null;
     } else {
-      showToast("error", "PW Sex");
+      showToast("error", "PW");
       PW.value = null;
     }
   };

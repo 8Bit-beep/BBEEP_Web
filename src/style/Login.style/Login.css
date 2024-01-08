@@ -8,7 +8,6 @@
 .LoginWrapper {
   width: 100%;
   height: 100vh;
-
   background-image: url("../../img/bbeepbackground.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,112 +16,86 @@
 }
 
 .LoginWrap {
-  width: 70%;
-  height: 85%;
-  background-color: #fff;
+  width: calc(100vw - 30vw);
+  height: calc(100vh - 20vh);
+
+  background: #fff;
+
+  margin: 0 auto;
 
   align-self: center;
-  margin: 0 auto;
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 
-  border: none;
   border-radius: 15px;
 }
 
-.LoginWrap > img {
-  width: 100%;
-  height: 102.3%;
-  margin-left: -4.8%;
-}
-
 .InputWrap {
+  margin-left: 5vw;
+  margin-top: 8vh;
+
   display: flex;
   flex-direction: column;
 }
 
-.InputWrap > h1 {
+h1 {
   color: #303a46;
   font-family: "SBAggroB";
-  font-size: 2rem;
-  font-weight: 500;
-
-  display: block;
-  margin-right: 400px;
-  margin-top: 100px;
-}
-
-.InputWrap > input {
-  width: 22vw;
-  height: 4vw;
-
-  border-radius: 20px;
-  border: 3px solid rgba(48, 58, 70, 0.77);
-  background: #f6f7f9;
-
-  padding-left: 3vw;
-
-  color: #000;
-  font-family: Sathu;
-  font-size: 20px;
+  font-size: 3rem;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+}
 
+input {
+  width: calc(100vw - 75vw);
+  height: calc(100vh - 93vh);
+
+  border-radius: 20px;
+  border: 2px solid rgba(48, 58, 70, 0.77);
+  background: #f6f7f9;
+
+  padding-left: 2vw;
+
+  font-family: "Sathu";
+  font-weight: 1.5rem;
+}
+
+input::placeholder {
+  font-family: "Sathu";
+  font-weight: 1.5rem;
+}
+
+input:focus {
   outline: none;
 }
 
 .ID {
-  margin-top: 100px;
+  margin-top: 10vh;
 }
 
 .PW {
-  margin-top: 50px;
-}
-
-.InputWrap > input::placeholder {
-  color: #000;
-  font-family: Sathu;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  margin-top: 5vh;
 }
 
 .errorMessageWrap {
-  font-size: 1rem;
-  color: red;
-  margin-top: 10px;
+  font-family: "Sathu";
+
+  color: #ef0000;
+  margin-left: 1vw;
+  margin-top: 1vh;
 }
 
 .LoginBtn {
-  width: 450px;
-  height: 60px;
-  flex-shrink: 0;
+  margin: 10vh auto;
+  width: calc(100vw - 75vw);
+  height: 7vh;
 
   border-radius: 30px;
   background: #303a46;
 
-  color: #f6f7f9;
-  font-family: "SBAggroB";
+  color: #fff;
+  font-size: "SBAggroB";
   font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-top: 180px;
-  margin-left: 75px;
-}
-
-.LoginBtn:disabled {
-  background: #d7d7d7;
-  border: none;
-}
-
-.swalError-lg {
-  width: 300px;
-  font-size: 0.7rem;
-  display: flex;
-  flex-direction: row;
+  font-weight: 600;
 }
