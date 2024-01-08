@@ -3,35 +3,35 @@ import "./Main.css";
 import Side from "../Side/Side";
 import { useNavigate } from "react-router-dom";
 const Bbeep = () => {
+  const [isSelectedRoom, setIsSelectedRoom] = useState("");
   const navigate = useNavigate();
-  let toggle;
-  const HandleSearchRoom = () => {
-    let Room = document.getElementById("RoomCheck");
-    let Class = document.getElementById("ClassCheck");
 
-    if (!toggle) {
-      Room.style.color = "blue";
-      Class.style.color = "black";
-      toggle = true;
-    } else {
-      Class.style.color = "blue";
-      Room.style.color = "black";
-      toggle = false;
+  const HandleSearchRoom = (room) => {
+    setIsSelectedRoom((prevRoom) => (prevRoom === room ? null : room));
+
+    switch (room) {
+      case "실 조회하기":
+        navigate("check-room");
+        break;
+      case "학반 조회하기":
+        navigate("check-class");
     }
-  };
-
-  const HandleTouchGrade = () => {
-    let Hi;
   };
 
   return (
     <div className="MainWrapper">
       <Side />
       <div className="HeaderBar">
-        <span id="RoomCheck" onClick={HandleSearchRoom} className="first">
+        <span
+          onClick={() => HandleSearchRoom("실 조회하기")}
+          className={isSelectedRoom === "실 조회하기" ? "SelectedRoom" : "Room"}
+        >
           실 조회하기
         </span>
-        <span id="ClassCheck" onClick={HandleSearchRoom}>
+        <span
+          onClick={() => HandleSearchRoom("학반 조회하기")}
+          className={isSelectedRoom === "학반 조회하기" ? "SelectedRoom" : "Room"}
+        >
           학반 조회하기
         </span>
       </div>
