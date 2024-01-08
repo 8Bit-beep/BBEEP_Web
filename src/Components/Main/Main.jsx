@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Main.css";
-import Side from "../Side/Side";
+import Side from "../Side/side";
 import { useNavigate } from "react-router-dom";
 const Bbeep = () => {
   const [isSelectedRoom, setIsSelectedRoom] = useState("");
