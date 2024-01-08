@@ -2,3 +2,10 @@
   padding: 0;
   margin: 0;
 }
+
+@font-face {
+  font-family: "SBAggroB";
+  src: url("../src/font/SBAggroB.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
