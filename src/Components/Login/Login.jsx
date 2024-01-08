@@ -1,6 +1,6 @@
-import React, { useDebugValue, useEffect, useState } from "react";
-import "./Login.css";
-import Logo from "../img/Group 23.svg";
+import React, { useEffect, useState } from "react";
+import "../../style/Login.style/Login.css";
+import Logo from "../../img/Group 23.svg";
 
 const Login = () => {
   const [id, setId] = useState("");
