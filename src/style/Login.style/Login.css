@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "SBAggroB";
+  src: url("../../font/SBAggroB.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.LoginWrapper {
+  width: 100%;
+  height: 100vh;
+
+  background-image: url("../../img/bbeepbackground.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+}
+
+.LoginWrap {
+  width: 70%;
+  height: 85%;
+  background-color: #fff;
+
+  align-self: center;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  border: none;
+  border-radius: 15px;
+}
+
+.LoginWrap > img {
+  height: 102.3%;
+  margin-left: -2.1%;
+}
+
+.InputWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.InputWrap > h1 {
+  color: #303a46;
+  font-family: "SBAggroB";
+  font-size: 3rem;
+  font-weight: 500;
+
+  display: block;
+  margin-right: 500px;
+  margin-top: 100px;
+}
+
+.InputWrap > input {
+  width: 22vw;
+  height: 4vw;
+
+  border-radius: 20px;
+  border: 3px solid rgba(48, 58, 70, 0.77);
+  background: #f6f7f9;
+
+  padding-left: 3vw;
+
+  color: #000;
+  font-family: Sathu;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  outline: none;
+}
+
+.ID {
+  margin-top: 100px;
+}
+
+.PW {
+  margin-top: 50px;
+}
+
+.InputWrap > input::placeholder {
+  color: #000;
+  font-family: Sathu;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.errorMessageWrap {
+  font-size: 1rem;
+  color: red;
+  margin-top: 10px;
+}
+
+.LoginBtn {
+  width: 450px;
+  height: 60px;
+  flex-shrink: 0;
+
+  border-radius: 30px;
+  background: #303a46;
+
+  color: #f6f7f9;
+  font-family: "SBAggroB";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 180px;
+  margin-left: 75px;
+}
+
+.LoginBtn:disabled {
+  background: #d7d7d7;
+  border: none;
+}
+
+.swalError-lg {
+  width: 300px;
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: row;
+}

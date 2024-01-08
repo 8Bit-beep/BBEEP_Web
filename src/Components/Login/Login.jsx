@@ -1,65 +1,80 @@
-import React, {useDebugValue, useEffect, useState} from 'react';
-import "./Login.css";
-import Logo from "../img/Group 23.svg";
+import "../../style/Login.style/Login.css";
+import Logo from "../../img/Bbeep.svg";
+import { useEffect, useState } from "react";
+import { showToast } from "../../lib/Swal/Swal";
 
+const User = {
+  id: "yeonggu1234",
+  pw: "qwer1234!",
+};
 
-const Login = () =>{
-    const [id, setId] = useState("");
-    const [pw, setPw] = useState("");
+const Login = () => {
+  const [idValid, setIdValid] = useState(false);
+  const [pwValid, setPwValid] = useState(false);
+  const [notAllow, setNotAllow] = useState(true);
 
-    const [Allow,setAllow] = useState(false)
-    const [pwValid, setPwValid] = useState(false)
-    const [idValid, setIdValid] = useState(false)
+  const [id, setId] = useState("");
+  const [pw, setPw] = useState("");
 
-
-    useEffect(() =>{
-        if (idValid && pwValid){
-            setAllow(true)
-            return;
-        }
-        setAllow(false)
-    },[idValid,pwValid]);
-
-    const onClickConfirButton = () => {
-        alert("서영우");
+  useEffect(() => {
+    if (idValid && pwValid) {
+      setNotAllow(false);
+      return;
     }
+    setNotAllow(true);
+  }, [idValid, pwValid]);
 
-
-    const changeId = (e) =>{
-        setId(e.target.value)
-        if(id.length>0){
-            setIdValid(true)
-        }else{
-            setIdValid(false)
-        }
+  const handleID = (e) => {
+    setId(e.target.value);
+    if (id.length <= 0) {
+      setIdValid(false);
+    } else {
+      setIdValid(true);
     }
+  };
 
-    const changePw = (e) =>{
-        setPw(e.target.value)
-        const regex = /^(?=\S*?[a-zA-Z])(?=\S*?[0-9])(?=\S*?[$`~!@$!%*#^?&\(\)\-_=+])\S{8,20}$/;
+  const handlePw = (e) => {
+    setPw(e.target.value);
+    const regex = /^(?=\S*?[a-zA-Z])(?=\S*?[0-9])(?=\S*?[$`~!@$!%*#^?&\\(\\)\-_=+])\S{8,20}$/;
 
-        if(regex.test(e.target.value) && pw.length >0) {
-            setPwValid(true)
-        }else{
-            setPwValid(false)
-        }
+    if (regex.test(e.target.value) && pw.length > 0) {
+      setPwValid(true);
+    } else {
+      setPwValid(false);
     }
+  };
 
-    return (
-        <div>
-            <div className={"login-background"}>
-                <div className={"login"}>
-                    <img className={"img"} src={Logo} />
-                    <h1>Login</h1>
-                    <div className={"Login-UI"}>
-                        <input  className={"ID"} placeholder={"ID"} type={'text'} value={id} onChange={changeId}/>
-                        <input placeholder={"password"} type={"password"} value={pw} onChange={changePw}/>
-                        <button disabled={Allow} onClick={onClickConfirButton}>Login </button>
-                    </div>
-                </div>
-            </div>
+  const onClickConfirmButton = () => {
+    const ID = document.getElementById("id");
+    const PW = document.getElementById("pw");
+    if (id == User.id && pw == User.pw) {
+      showToast("success", "Login Sex!");
+    } else if (id !== User.id && pw === User.pw) {
+      showToast("error", "ID Sex");
+      ID.value = null;
+    } else {
+      showToast("error", "PW Sex");
+      PW.value = null;
+    }
+  };
+
+  return (
+    <div className="LoginWrapper">
+      <div className="LoginWrap">
+        <img src={Logo} alt="" />
+        <div className="InputWrap">
+          <h1>Log in</h1>
+          <input className="ID" placeholder="ID" id="id" value={id} onChange={handleID} />
+          {!idValid && <div className="errorMessageWrap">ID를 입력해주세요.</div>}
+          <input type="password" className="PW" placeholder="Password" id="pw" value={pw} onChange={handlePw} />
+          {!pwValid && <div className="errorMessageWrap">비밀번호를 입력해주세요.</div>}
+          <button className="LoginBtn" disabled={notAllow} onClick={onClickConfirmButton}>
+            Log in
+          </button>
         </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 
 export default Login;
