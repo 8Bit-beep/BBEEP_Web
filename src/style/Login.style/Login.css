@@ -33,8 +33,9 @@
 }
 
 .LoginWrap > img {
+  width: 100%;
   height: 102.3%;
-  margin-left: -2.1%;
+  margin-left: -4.8%;
 }
 
 .InputWrap {
@@ -45,11 +46,11 @@
 .InputWrap > h1 {
   color: #303a46;
   font-family: "SBAggroB";
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
 
   display: block;
-  margin-right: 500px;
+  margin-right: 400px;
   margin-top: 100px;
 }
 
