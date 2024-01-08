@@ -1,18 +1,15 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "./Components/Main/Main";
 import Login from "./Components/Login/Login";
-// import side from "./Components/side/side";
-
+import CheckClass from "./Components/CheckClass/CheckClass";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Main />} />
-            <Route path="/Login" element={<Login />} />
-            
+          <Route path="/" element={<Login />} />
+          <Route path="/check-class/first-grade" element={<CheckClass />} />
         </Routes>
       </div>
     </BrowserRouter>
