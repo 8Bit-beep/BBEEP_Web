@@ -2,8 +2,39 @@ import React, { useState } from "react";
 import Side from "../Side/Side";
 import "../../style/Grade.style/FirstGrade.css";
 import { useNavigate } from "react-router-dom";
+import ReactModal from "react-modal";
+import { Modal } from "../../lib/Modal/Modal";
+
+const FirstClassStudent = [
+  { id: 1, name: "권에림" },
+  { id: 2, name: "김가영" },
+  { id: 3, name: "류현서" },
+];
+
+const SecondClassStudent = [
+  { id: 1, name: "김주환" },
+  { id: 2, name: "김지원" },
+  { id: 3, name: "박재욱" },
+];
+
+const ThirdClassStudent = [
+  { id: 1, name: "김수아" },
+  { id: 2, name: "김은진" },
+  { id: 3, name: "이윤선" },
+];
+
+const FourthClassStudent = [
+  { id: 1, name: "배성은" },
+  { id: 2, name: "배채희" },
+  { id: 3, name: "김호준" },
+];
+
 const FirstGrade = () => {
   const [isClickedCheck, setIsClickedCheck] = useState(null);
+  const [isOpenModal1, setIsOpenModal1] = useState(false);
+  const [isOpenModal2, setIsOpenModal2] = useState(false);
+  const [isOpenModal3, setIsOpenModal3] = useState(false);
+  const [isOpenModal4, setIsOpenModal4] = useState(false);
   const navigate = useNavigate();
 
   const onClickCheckRoom = (check) => {
@@ -16,6 +47,30 @@ const FirstGrade = () => {
       case "학반 조회하기":
         navigate("check-class");
         break;
+    }
+  };
+
+  const onClickOpenModal = (modalNumber) => {
+    if (modalNumber === 1) {
+      setIsOpenModal1(true);
+    } else if (modalNumber === 2) {
+      setIsOpenModal2(true);
+    } else if (modalNumber === 3) {
+      setIsOpenModal3(true);
+    } else {
+      setIsOpenModal4(true);
+    }
+  };
+
+  const onClickCloseModal = (modalNumber) => {
+    if (modalNumber === 1) {
+      setIsOpenModal1(false);
+    } else if (modalNumber === 2) {
+      setIsOpenModal2(false);
+    } else if (modalNumber === 3) {
+      setIsOpenModal3(false);
+    } else {
+      setIsOpenModal4(false);
     }
   };
 
@@ -34,10 +89,30 @@ const FirstGrade = () => {
         </span>
       </div>
       <div className="Category">
-        <div>1반</div>
-        <div>2반</div>
-        <div>3반</div>
-        <div>4반</div>
+        <div onClick={() => onClickOpenModal(1)}>1반</div>
+        <Modal isOpen={isOpenModal1} onClose={() => onClickCloseModal(1)}>
+          {FirstClassStudent.map((key) => (
+            <div>{key.name}</div>
+          ))}
+        </Modal>
+        <div onClick={() => onClickOpenModal(2)}>2반</div>
+        <Modal isOpen={isOpenModal2} onClose={() => onClickCloseModal(2)}>
+          {SecondClassStudent.map((key) => (
+            <div>{key.name}</div>
+          ))}
+        </Modal>
+        <div onClick={() => onClickOpenModal(3)}>3반</div>
+        <Modal isOpen={isOpenModal3} onClose={() => onClickCloseModal(3)}>
+          {ThirdClassStudent.map((key) => (
+            <div>{key.name}</div>
+          ))}
+        </Modal>
+        <div onClick={() => onClickOpenModal(4)}>4반</div>
+        <Modal isOpen={isOpenModal4} onClose={() => onClickCloseModal(4)}>
+          {FourthClassStudent.map((key) => (
+            <div>{key.name}</div>
+          ))}
+        </Modal>
       </div>
     </div>
   );
