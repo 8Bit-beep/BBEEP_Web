@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Side from "../Side/Side";
 import "../../style/Grade.style/Grade.css";
 import { useNavigate } from "react-router-dom";
-import ReactModal from "react-modal";
 import { Modal } from "../../lib/Modal/Modal";
 
 const FirstClassStudent = [
