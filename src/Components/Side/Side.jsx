@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../style/Side.style/Side.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import { faGraduationCap, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useLocation, useNavigate } from "react-router-dom";
 const Side = () => {
   const [clickedCategory, setIsClickedCategory] = useState(null);
@@ -72,6 +72,7 @@ const Side = () => {
           <FontAwesomeIcon icon={faGraduationCap} color="white" className="icon" />
           <span>3학년</span>
         </div>
+        <button className="ShowChatBtn">메시지 보기</button>
       </div>
     </div>
   );
