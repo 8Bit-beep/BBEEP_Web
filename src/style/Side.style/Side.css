@@ -2,6 +2,8 @@
   font-size: 9rem;
   margin-left: 4vw;
   margin-top: 2vh;
+
+  cursor: pointer;
 }
 
 .SideBarWrap {
@@ -25,6 +27,8 @@
   color: #fff;
 
   background-color: #d7d7d7;
+
+  cursor: pointer;
 }
 
 .Selected1 {
@@ -44,6 +48,8 @@
   background: #346287;
 
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
 }
 
 .Selected2 {
@@ -63,6 +69,8 @@
   background: #3cb0b8;
 
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
 }
 
 .Selected3 {
@@ -79,9 +87,11 @@
   font-family: "SBAggroB";
   font-size: 1.3rem;
   color: #fff;
-  background:  #303A46;
-  
+  background: #303a46;
+
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
 }
 
 .icon {
