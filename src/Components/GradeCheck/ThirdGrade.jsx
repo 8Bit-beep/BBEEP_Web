@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./CheckClass.css";
 import Side from "../Side/Side";
+import "../../style/Grade.style/FirstGrade.css";
 import { useNavigate } from "react-router-dom";
-const CheckClass = () => {
+const ThirdGrade = () => {
   const [isClickedCheck, setIsClickedCheck] = useState(null);
   const navigate = useNavigate();
 
@@ -37,10 +37,9 @@ const CheckClass = () => {
         <div>1반</div>
         <div>2반</div>
         <div>3반</div>
-        <div>4반</div>
       </div>
     </div>
   );
 };
 
-export default CheckClass;
+export default ThirdGrade;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./CheckClass.css";
 import Side from "../Side/Side";
+import "../../style/Grade.style/FirstGrade.css";
 import { useNavigate } from "react-router-dom";
-const CheckClass = () => {
+const SecondGrade = () => {
   const [isClickedCheck, setIsClickedCheck] = useState(null);
   const navigate = useNavigate();
 
@@ -43,4 +43,4 @@ const CheckClass = () => {
   );
 };
 
-export default CheckClass;
+export default SecondGrade;
