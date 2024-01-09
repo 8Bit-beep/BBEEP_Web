@@ -38,12 +38,15 @@ const Side = () => {
       case "3학년":
         navigate("/third-grade");
         break;
+      default:
+        navigate(null);
     }
   };
 
   const onClickNavigateMain = () => {
     navigate("/main");
   };
+
   return (
     <div>
       <div className="SideBarWrap">

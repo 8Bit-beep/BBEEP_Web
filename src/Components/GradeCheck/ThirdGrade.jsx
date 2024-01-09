@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Side from "../Side/Side";
-import "../../style/Grade.style/FirstGrade.css";
+import "../../style/Grade.style/Grade.css";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "../../lib/Modal/Modal";
 
@@ -80,19 +80,19 @@ const ThirdGrade = () => {
         <div onClick={() => onClickOpenModal(1)}>1반</div>
         <Modal isOpen={isOpenModal1} onClose={() => onClickCloseModal(1)}>
           {FirstClassStudent.map((key) => (
-            <div>{key.name}</div>
+            <div className="DetailStudentName">{key.name}</div>
           ))}
         </Modal>
         <div onClick={() => onClickOpenModal(2)}>2반</div>
         <Modal isOpen={isOpenModal2} onClose={() => onClickCloseModal(2)}>
           {SecondClassStudent.map((key) => (
-            <div>{key.name}</div>
+            <div className="DetailStudentName">{key.name}</div>
           ))}
         </Modal>
         <div onClick={() => onClickOpenModal(3)}>3반</div>
         <Modal isOpen={isOpenModal3} onClose={() => onClickCloseModal(3)}>
           {ThirdClassStudent.map((key) => (
-            <div>{key.name}</div>
+            <div className="DetailStudentName">{key.name}</div>
           ))}
         </Modal>
       </div>
