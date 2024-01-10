@@ -6,6 +6,7 @@ import LabClass from "./Components/CheckClass/LabClass";
 import FirstGrade from "./Components/GradeCheck/FirstGrade";
 import SecondGrade from "./Components/GradeCheck/SecondGrade";
 import ThirdGrade from "./Components/GradeCheck/ThirdGrade";
+import MainClass from "./Components/CheckClass/MainClass";
 
 function App() {
   return (
@@ -14,10 +15,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/main" element={<Main />} />
-          <Route path="lab-class" element={<LabClass />} />
-          <Route path="first-grade" element={<FirstGrade />} />
-          <Route path="second-grade" element={<SecondGrade />} />
-          <Route path="third-grade" element={<ThirdGrade />} />
+          <Route path="/lab-class" element={<LabClass />} />
+          <Route path="/first-grade" element={<FirstGrade />} />
+          <Route path="/second-grade" element={<SecondGrade />} />
+          <Route path="/third-grade" element={<ThirdGrade />} />
+          <Route path="/main-class" element={<MainClass />} />
         </Routes>
       </div>
     </BrowserRouter>

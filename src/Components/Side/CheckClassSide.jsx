@@ -43,6 +43,7 @@ const CheckClassSide = () => {
         break;
       case "별관":
         navigate("/special-class");
+        break;
       default:
         navigate(null);
     }
