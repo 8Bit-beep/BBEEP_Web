@@ -35,8 +35,7 @@
   margin-left: 5vw;
   margin-top: 8vh;
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
 }
 
 h1 {
@@ -98,4 +97,38 @@ input:focus {
   font-size: "SBAggroB";
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.ShowPwBtn {
+  display: flex;
+  flex-direction: row;
+}
+
+.ShowPwBtn input[type="checkbox"] {
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  width: 1vh;
+  height: 4vh;
+  border: 2px solid #000;
+  cursor: pointer;
+
+  transform: scale(0.5);
+  border-radius: 0;
+
+  top: 63vh;
+}
+
+.ShowPwBtn input[type="checkbox"]:checked {
+  background-color: #4caf50;
+}
+
+.ShowPwBtn span {
+  position: absolute;
+  font-family: "SBAggroB";
+  font-weight: 400;
+  top: 64vh;
+  left: 56vw;
 }
