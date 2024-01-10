@@ -10,10 +10,10 @@ const Main = () => {
 
     switch (check) {
       case "실 조회하기":
-        navigate("/check-room");
+        navigate("/lab-class");
         break;
       case "학반 조회하기":
-        navigate("/check-class");
+        navigate("/first-grade");
         break;
     }
   };

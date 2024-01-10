@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../style/Side.style/Side.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGraduationCap, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { useLocation, useNavigate } from "react-router-dom";
 const Side = () => {
   const [clickedCategory, setIsClickedCategory] = useState(null);
@@ -49,7 +49,7 @@ const Side = () => {
 
   return (
     <div>
-      <div className="SideBarWrap">
+      <div className="GradeSideBarWrap">
         <h1 onClick={onClickNavigateMain}>삑</h1>
         <div
           className={clickedCategory === "1학년" ? "Selected1" : "Grade"}

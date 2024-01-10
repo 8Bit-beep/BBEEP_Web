@@ -1,4 +1,4 @@
-.SideBarWrap h1 {
+.ClassSideBarWrap h1 {
   font-size: 9rem;
   margin-left: 4vw;
   margin-top: 2vh;
@@ -6,16 +6,16 @@
   cursor: pointer;
 }
 
-.SideBarWrap {
+.ClassSideBarWrap {
   display: flex;
   flex-direction: column;
 }
 
-.SideBarWrap > .Class {
+.ClassSideBarWrap > .Class {
   width: 20vw;
   height: 8vh;
 
-  margin-top: 6vh;
+  margin-top: 3vh;
 
   display: flex;
   justify-content: flex-start;

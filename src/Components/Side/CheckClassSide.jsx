@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "../../style/Side.style/Side.css";
+import "../../style/Side.style/CheckClass.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faSchool,  } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faSchool, faDumbbell, faStar } from "@fortawesome/free-solid-svg-icons";
 import { useLocation, useNavigate } from "react-router-dom";
 const CheckClassSide = () => {
   const [clickedCategory, setIsClickedCategory] = useState(null);
@@ -22,6 +22,7 @@ const CheckClassSide = () => {
         break;
       case "/special-class":
         setIsClickedCategory("별관");
+        break;
       default:
         setIsClickedCategory(null);
     }
@@ -53,7 +54,7 @@ const CheckClassSide = () => {
 
   return (
     <div>
-      <div className="SideBarWrap">
+      <div className="ClassSideBarWrap">
         <h1 onClick={onClickNavigateMain}>삑</h1>
         <div
           className={clickedCategory === "실습동" ? "Selected1" : "Class"}
@@ -73,14 +74,14 @@ const CheckClassSide = () => {
           className={clickedCategory === "강당" ? "Selected3" : "Class"}
           onClick={() => onClickGradeCategory("강당")}
         >
-          <FontAwesomeIcon icon={faGraduationCap} color="white" className="icon" />
+          <FontAwesomeIcon icon={faDumbbell} color="white" className="icon" />
           <span>강당</span>
         </div>
         <div
           className={clickedCategory === "별관" ? "Selected3" : "Class"}
           onClick={() => onClickGradeCategory("별관")}
         >
-          <FontAwesomeIcon icon={faGraduationCap} color="white" className="icon" />
+          <FontAwesomeIcon icon={faStar} color="white" className="icon" />
           <span>별관</span>
         </div>
         <button className="ShowChatBtn">메시지 보기</button>

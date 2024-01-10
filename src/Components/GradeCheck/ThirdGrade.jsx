@@ -34,10 +34,7 @@ const ThirdGrade = () => {
 
     switch (check) {
       case "실 조회하기":
-        navigate("check-room");
-        break;
-      case "학반 조회하기":
-        navigate("check-class");
+        navigate("/lab-class");
         break;
     }
   };
@@ -63,7 +60,7 @@ const ThirdGrade = () => {
   };
 
   return (
-    <div className="ClassCheckWrapper">
+    <div className="GradeCheckWrapper">
       <Side />
       <div className="HeaderBar">
         <span

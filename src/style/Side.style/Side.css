@@ -1,4 +1,4 @@
-.SideBarWrap h1 {
+.GradeSideBarWrap h1 {
   font-size: 9rem;
   margin-left: 4vw;
   margin-top: 2vh;
@@ -6,12 +6,12 @@
   cursor: pointer;
 }
 
-.SideBarWrap {
+.GradeSideBarWrap {
   display: flex;
   flex-direction: column;
 }
 
-.SideBarWrap > .Grade {
+.GradeSideBarWrap > .Grade {
   width: 20vw;
   height: 8vh;
 

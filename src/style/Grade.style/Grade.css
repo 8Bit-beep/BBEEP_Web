@@ -1,4 +1,4 @@
-.ClassCheckWrapper {
+.GradeCheckWrapper {
   display: flex;
 }
 
@@ -12,6 +12,7 @@
   flex-direction: column;
   background: #e4e8ef;
 }
+
 .Category > div {
   display: flex;
   height: 100px;
