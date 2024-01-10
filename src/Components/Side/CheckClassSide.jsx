@@ -79,7 +79,7 @@ const CheckClassSide = () => {
           <span>강당</span>
         </div>
         <div
-          className={clickedCategory === "별관" ? "Selected3" : "Class"}
+          className={clickedCategory === "별관" ? "Selected4" : "Class"}
           onClick={() => onClickGradeCategory("별관")}
         >
           <FontAwesomeIcon icon={faStar} color="white" className="icon" />

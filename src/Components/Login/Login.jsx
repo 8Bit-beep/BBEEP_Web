@@ -5,7 +5,7 @@ import { showToast } from "../../lib/Swal/Swal";
 import { useNavigate } from "react-router-dom";
 
 const User = {
-  id: "yeonggu1234",
+  id: "yeongu1234",
   pw: "qwer1234!",
 };
 

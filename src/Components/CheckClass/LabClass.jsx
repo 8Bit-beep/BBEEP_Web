@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../style/Class.style/Class.css";
+import "../../style/Class.style/LabClass.css";
 import CheckClassSide from "../Side/CheckClassSide";
 import { useNavigate } from "react-router-dom";
 
