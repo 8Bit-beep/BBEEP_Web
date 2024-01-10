@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import "../../style/Class.style/MainClass.css";
 import CheckClassSide from "../Side/CheckClassSide";
 import { useNavigate } from "react-router-dom";

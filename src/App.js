@@ -7,7 +7,7 @@ import MainClass from "./Components/CheckClass/MainClass";
 import FirstGrade from "./Components/GradeCheck/FirstGrade";
 import SecondGrade from "./Components/GradeCheck/SecondGrade";
 import ThirdGrade from "./Components/GradeCheck/ThirdGrade";
-import MainClass from "./Components/CheckClass/MainClass";
+import SpecialClass from "./Components/CheckClass/SpecialClass";
 
 function App() {
   return (
@@ -16,17 +16,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/main" element={<Main />} />
-<<<<<<< Updated upstream
           <Route path="/lab-class" element={<LabClass />} />
           <Route path="/first-grade" element={<FirstGrade />} />
           <Route path="/second-grade" element={<SecondGrade />} />
           <Route path="/third-grade" element={<ThirdGrade />} />
-=======
-          <Route path="lab-class" element={<LabClass />} />
-          <Route path="first-grade" element={<FirstGrade />} />
-          <Route path="second-grade" element={<SecondGrade />} />
-          <Route path="third-grade" element={<ThirdGrade />} />
->>>>>>> Stashed changes
+          <Route path="/special-class" element={<SpecialClass />} />
           <Route path="/main-class" element={<MainClass />} />
         </Routes>
       </div>
