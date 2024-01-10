@@ -13,6 +13,9 @@
 # production
 /build
 
+clientId.js
+ServerAddr.js
+
 # misc
 .DS_Store
 .env.local

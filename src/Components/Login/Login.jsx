@@ -90,12 +90,13 @@ const Login = () => {
             value={pw}
             onChange={handlePw}
             ref={ShowPassWordRef}
+            maxLength={20}
           />
           {!pwValid && <div className="errorMessageWrap">비밀번호를 입력해주세요.</div>}
           <div className="ShowPwBtn">
             <label>
               <input type="checkbox" onChange={handleShowPwChecked} />
-              <span>비밀번호 보X</span>
+              <span>비밀번호 보기</span>
             </label>
           </div>
           <div className="ButtonWrap">

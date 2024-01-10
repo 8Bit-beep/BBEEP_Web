@@ -106,19 +106,19 @@ input:focus {
 
 .ShowPwBtn input[type="checkbox"] {
   position: absolute;
+  top: 63vh;
+
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   outline: none;
   width: 1vh;
   height: 4vh;
-  border: 2px solid #000;
-  cursor: pointer;
-
   transform: scale(0.5);
-  border-radius: 0;
 
-  top: 63vh;
+  border: 2px solid #000;
+  border-radius: 0;
+  cursor: pointer;
 }
 
 .ShowPwBtn input[type="checkbox"]:checked {
