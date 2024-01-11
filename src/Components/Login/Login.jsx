@@ -3,6 +3,9 @@ import Logo from "../../img/Logo.svg";
 import { useEffect, useRef, useState } from "react";
 import { showToast } from "../../lib/Swal/Swal";
 import { useNavigate } from "react-router-dom";
+import SERVERURL from "../../Auth/ServerAddr";
+import ClientID from "../../Auth/clientId";
+import axios from "axios";
 
 const User = {
   id: "yeongu1234",
@@ -10,6 +13,7 @@ const User = {
 };
 
 const Login = () => {
+
   const [idValid, setIdValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [notAllow, setNotAllow] = useState(true);
@@ -63,6 +67,9 @@ const Login = () => {
   };
 
   const onClickConfirmButton = () => {
+
+    // axios.post(())
+
     if (id === User.id && pw === User.pw) {
       showToast("success", "Login");
       navigate("/main");
