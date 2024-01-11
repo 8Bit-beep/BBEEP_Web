@@ -13,7 +13,7 @@ const ArtClass = [
 const ScienceClass = [
   { grade: 1, cls: 1, number: "18", name: "김혜정" },
   { grade: 2, cls: 3, number: "28", name: "권하진" },
-  { grade: 3, cls: 1, number: "7", name: "김영성" },
+  { grade: 3, cls: 1, number: "07", name: "김영성" },
 ];
 
 const MobileProgramingClass = [
@@ -23,7 +23,7 @@ const MobileProgramingClass = [
 ];
 
 const OcestaClass = [
-  { grade: 1, cls: 2, number: "13", name: "유승하" },
+  { grade: 2, cls: 2, number: "13", name: "유승하" },
   { grade: 1, cls: 2, number: "69", name: "정명교" },
   { grade: 2, cls: 1, number: "911", name: "김민기" },
 ];

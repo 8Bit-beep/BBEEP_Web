@@ -13,7 +13,6 @@ const User = {
 };
 
 const Login = () => {
-
   const [idValid, setIdValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [notAllow, setNotAllow] = useState(true);
@@ -66,9 +65,8 @@ const Login = () => {
     }
   };
 
-  const onClickConfirmButton = () => {
-
-    // axios.post(())
+  const onClickConfirmButton = async (response) => {
+    // axios.post(SERVERURL + "/auth", {}, { headers: null });
 
     if (id === User.id && pw === User.pw) {
       showToast("success", "Login");
