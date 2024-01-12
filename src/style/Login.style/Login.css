@@ -92,6 +92,10 @@ input:focus {
   font-weight: 600;
 }
 
+.LoginBtn:disabled {
+  background-color: #d7d7d7;
+}
+
 .ShowPwBtn {
   display: flex;
   flex-direction: row;

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Side from "../Side/Side";
 import "../../style/Grade.style/Grade.css";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "../../lib/Modal/Modal";
+import axios from "axios";
+import SERVERURL from "../../Auth/ServerAddr";
 
 const FirstClassStudent = [
   { id: 1, name: "권에림" },
@@ -29,6 +31,24 @@ const FourthClassStudent = [
 ];
 
 const FirstGrade = () => {
+  useEffect(() => {
+    const GetClassList = async () => {
+      const params = { name: "1-2" };
+      const response = await axios.get(
+        SERVERURL + "/teacher/student/list/room",
+        { params },
+        {
+          Headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        },
+      );
+      setCls(response.data);
+    };
+    GetClassList();
+  }, []);
+
+  const [cls, setCls] = useState();
   const [isClickedCheck, setIsClickedCheck] = useState(null);
   const [isOpenModal1, setIsOpenModal1] = useState(false);
   const [isOpenModal2, setIsOpenModal2] = useState(false);

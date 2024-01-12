@@ -4,12 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { showToast } from "../../lib/Swal/Swal";
 import { useNavigate } from "react-router-dom";
 import SERVERURL from "../../Auth/ServerAddr";
-import ClientID from "../../Auth/clientId";
 import axios from "axios";
 
 const User = {
-  id: "yeongu1234",
-  pw: "qwer1234!",
+  id: "kimPole",
+  pw: "1234",
 };
 
 const Login = () => {
@@ -23,6 +22,7 @@ const Login = () => {
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
 
+  const [data, setData] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,8 +33,24 @@ const Login = () => {
     setNotAllow(true);
   }, [idValid, pwValid]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(SERVERURL + "/teacher/token/refresh");
+        setData(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
+
   const handleID = (e) => {
     setId(e.target.value);
+    setIdValid(true);
     if (id.length <= 0) {
       setIdValid(false);
     } else {
@@ -44,20 +60,19 @@ const Login = () => {
 
   const handlePw = (e) => {
     setPw(e.target.value);
-    const regex = /^(?=\S*?[a-zA-Z])(?=\S*?[0-9])(?=\S*?[$`~!@$!%*#^?&\\(\\)\-_=+])\S{8,20}$/;
-
-    if (regex.test(e.target.value) && pw.length > 0) {
+    setPwValid(true);
+    if (pw.length > 0) {
       setPwValid(true);
     } else {
       setPwValid(false);
     }
   };
 
-  const handleShowPwChecked = async () => {
-    const password = await ShowPassWordRef.current;
+  const handleShowPwChecked = () => {
+    const password = ShowPassWordRef.current;
     if (password === null) return;
 
-    await setIsShowPassWord(!isShowPassWord);
+    setIsShowPassWord(!isShowPassWord);
     if (!isShowPassWord) {
       password.type = "text";
     } else {
@@ -65,18 +80,32 @@ const Login = () => {
     }
   };
 
-  const onClickConfirmButton = async (response) => {
-    // axios.post(SERVERURL + "/auth", {}, { headers: null });
+  const onClickConfirmButton = async () => {
+    try {
+      const response = await axios.post(SERVERURL + "/auth/sign-in", {
+        userId: `${User.id}`,
+        password: `${User.pw}`,
+      });
 
-    if (id === User.id && pw === User.pw) {
-      showToast("success", "Login");
-      navigate("/main");
-    } else if (id !== User.id && pw === User.pw) {
-      showToast("error", "ID");
-      setId("");
-    } else {
-      showToast("error", "PW");
-      setPw("");
+      if (id === User.id && pw === User.pw) {
+        localStorage.setItem("accessToken", response.data.accessToken);
+        localStorage.setItem("refreshToken", response.data.refreshToken);
+        console.log(localStorage.getItem("accessToken"));
+        console.log(localStorage.getItem("refreshToken"));
+        navigate("/main")
+      }
+
+      if (
+        (id !== User.id && pw !== User.pw) ||
+        (id === User.id && pw !== User.pw) ||
+        (id !== User.id && pw === User.pw)
+      ) {
+        localStorage.clear();
+        console.log(localStorage.getItem("accessToken"));
+        console.log(localStorage.getItem("refreshToken"));
+      }
+    } catch (error) {
+      console.error(error);
     }
   };
 
