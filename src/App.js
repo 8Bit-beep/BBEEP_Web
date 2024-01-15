@@ -8,8 +8,30 @@ import FirstGrade from "./Components/GradeCheck/FirstGrade";
 import SecondGrade from "./Components/GradeCheck/SecondGrade";
 import ThirdGrade from "./Components/GradeCheck/ThirdGrade";
 import SpecialClass from "./Components/CheckClass/SpecialClass";
+import SERVERURL from "./Auth/ServerAddr";
+import axios from "axios";
+import { useEffect } from "react";
 
 function App() {
+  // useEffect(() => {
+  //   const refreshToken = async () => {
+  //     try {
+  //       const response = await axios.get(SERVERURL + "/auth/student/token/refresh", {
+  //         headers: {
+  //           Authorization: `Bearer ${localStorage.getItem("refreshToken")}`,
+  //         },
+  //       });
+  //       const newAccessToken = response.data.token;
+  //       localStorage.setItem("accessToken", newAccessToken);
+  //       return newAccessToken;
+  //     } catch (error) {
+  //       console.error("Failed TokenRefresh", error);
+  //       throw error;
+  //     }
+  //   };
+  //   refreshToken();
+  // }, []);
+
   return (
     <BrowserRouter>
       <div className="App">

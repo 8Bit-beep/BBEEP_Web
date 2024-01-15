@@ -25,6 +25,8 @@ const Login = () => {
   const [data, setData] = useState(null);
   const navigate = useNavigate();
 
+  
+
   useEffect(() => {
     if (idValid && pwValid) {
       setNotAllow(false);
@@ -32,21 +34,6 @@ const Login = () => {
     }
     setNotAllow(true);
   }, [idValid, pwValid]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(SERVERURL + "/teacher/token/refresh");
-        setData(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-
 
   const handleID = (e) => {
     setId(e.target.value);
@@ -83,8 +70,8 @@ const Login = () => {
   const onClickConfirmButton = async () => {
     try {
       const response = await axios.post(SERVERURL + "/auth/sign-in", {
-        userId: `${User.id}`,
-        password: `${User.pw}`,
+        userId: `${id}`,
+        password: `${pw}`,
       });
 
       if (id === User.id && pw === User.pw) {
@@ -92,19 +79,11 @@ const Login = () => {
         localStorage.setItem("refreshToken", response.data.refreshToken);
         console.log(localStorage.getItem("accessToken"));
         console.log(localStorage.getItem("refreshToken"));
-        navigate("/main")
-      }
-
-      if (
-        (id !== User.id && pw !== User.pw) ||
-        (id === User.id && pw !== User.pw) ||
-        (id !== User.id && pw === User.pw)
-      ) {
-        localStorage.clear();
-        console.log(localStorage.getItem("accessToken"));
-        console.log(localStorage.getItem("refreshToken"));
+        showToast("success", "onClickConfirmButton");
+        navigate("/main");
       }
     } catch (error) {
+      localStorage.clear();
       console.error(error);
     }
   };
