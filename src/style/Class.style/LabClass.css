@@ -38,7 +38,7 @@
 .ClassCheckWrapper > .HeaderBar {
   display: flex;
   position: absolute;
-
+  cursor: pointer;
   flex-direction: row;
   left: 320px;
   height: 100%;
@@ -46,6 +46,7 @@
   background: #f6f7f9;
   justify-content: right;
 }
+
 
 .ClassCheckWrapper > .NoneClick {
   color: #000;
@@ -67,6 +68,7 @@
   line-height: normal;
   margin-right: 50px;
   margin-top: 25px;
+  
 }
 
 .ClassCheckWrapper > .ClassSelected {
