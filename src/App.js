@@ -11,6 +11,7 @@ import SpecialClass from "./Components/CheckClass/SpecialClass";
 import SERVERURL from "./Auth/ServerAddr";
 import axios from "axios";
 import { useEffect } from "react";
+import ExerciseClass from "./Components/CheckClass/ExerciseClass";
 
 function App() {
   // useEffect(() => {
@@ -43,7 +44,8 @@ function App() {
           <Route path="/second-grade" element={<SecondGrade />} />
           <Route path="/third-grade" element={<ThirdGrade />} />
           <Route path="/special-class" element={<SpecialClass />} />
-          <Route path="/sex" element={<MainClass />} />
+          <Route path="/Main-class" element={<MainClass />} />
+          <Route path="/Exercise-Class" element={<ExerciseClass/>} />
         </Routes>
       </div>
     </BrowserRouter>
