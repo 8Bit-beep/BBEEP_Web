@@ -6,29 +6,29 @@ import { Modal } from "../../lib/Modal/Modal";
 import axios from "axios";
 import SERVERURL from "../../Auth/ServerAddr";
 
-// const FirstClassStudent = [
-//   { id: 1, name: "권에림" },
-//   { id: 2, name: "김가영" },
-//   { id: 3, name: "류현서" },
-// ];
+const FirstClassStudent = [
+  { id: 1, name: "권에림" },
+  { id: 2, name: "김가영" },
+  { id: 3, name: "류현서" },
+];
 
-// const SecondClassStudent = [
-//   { id: 1, name: "김주환" },
-//   { id: 2, name: "김지원" },
-//   { id: 3, name: "박재욱" },
-// ];
+const SecondClassStudent = [
+  { id: 1, name: "김주환" },
+  { id: 2, name: "김지원" },
+  { id: 3, name: "박재욱" },
+];
 
-// const ThirdClassStudent = [
-//   { id: 1, name: "김수아" },
-//   { id: 2, name: "김은진" },
-//   { id: 3, name: "이윤선" },
-// ];
+const ThirdClassStudent = [
+  { id: 1, name: "김수아" },
+  { id: 2, name: "김은진" },
+  { id: 3, name: "이윤선" },
+];
 
-// const FourthClassStudent = [
-//   { id: 1, name: "배성은" },
-//   { id: 2, name: "배채희" },
-//   { id: 3, name: "김호준" },
-// ];
+const FourthClassStudent = [
+  { id: 1, name: "배성은" },
+  { id: 2, name: "배채희" },
+  { id: 3, name: "김호준" },
+];
 
 const FirstGrade = () => {
   useEffect(() => {
@@ -107,29 +107,29 @@ const FirstGrade = () => {
       </div>
       <div className="Category">
         <div onClick={() => onClickOpenModal(1)}>1반</div>
-        {/* <Modal isOpen={isOpenModal1} onClose={() => onClickCloseModal(1)}>
+        <Modal isOpen={isOpenModal1} onClose={() => onClickCloseModal(1)}>
           {FirstClassStudent.map((key) => (
             <div className="DetailStudentName">{key.name}</div>
           ))}
-        </Modal> */}
+        </Modal>
         <div onClick={() => onClickOpenModal(2)}>2반</div>
-        {/* <Modal isOpen={isOpenModal2} onClose={() => onClickCloseModal(2)}>
+        <Modal isOpen={isOpenModal2} onClose={() => onClickCloseModal(2)}>
           {SecondClassStudent.map((key) => (
             <div className="DetailStudentName">{key.name}</div>
           ))}
-        </Modal> */}
+        </Modal>
         <div onClick={() => onClickOpenModal(3)}>3반</div>
-        {/* <Modal isOpen={isOpenModal3} onClose={() => onClickCloseModal(3)}>
+        <Modal isOpen={isOpenModal3} onClose={() => onClickCloseModal(3)}>
           {ThirdClassStudent.map((key) => (
             <div className="DetailStudentName">{key.name}</div>
           ))}
-        </Modal> */}
+        </Modal>
         <div onClick={() => onClickOpenModal(4)}>4반</div>
-        {/* <Modal isOpen={isOpenModal4} onClose={() => onClickCloseModal(4)}>
+        <Modal isOpen={isOpenModal4} onClose={() => onClickCloseModal(4)}>
           {FourthClassStudent.map((key) => (
             <div className="DetailStudentName">{key.name}</div>
           ))}
-        </Modal> */}
+        </Modal>
       </div>
     </div>
   );
