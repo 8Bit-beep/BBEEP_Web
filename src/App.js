@@ -43,7 +43,7 @@ function App() {
           <Route path="/second-grade" element={<SecondGrade />} />
           <Route path="/third-grade" element={<ThirdGrade />} />
           <Route path="/special-class" element={<SpecialClass />} />
-          <Route path="/main-class" element={<MainClass />} />
+          <Route path="/sex" element={<MainClass />} />
         </Routes>
       </div>
     </BrowserRouter>
