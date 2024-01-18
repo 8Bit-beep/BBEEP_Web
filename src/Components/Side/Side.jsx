@@ -39,7 +39,7 @@ const Side = () => {
         navigate("/third-grade");
         break;
       default:
-        navigate(null);
+        navigate("");
     }
   };
 
@@ -54,6 +54,7 @@ const Side = () => {
         <div
           className={clickedCategory === "1학년" ? "Selected1" : "Grade"}
           onClick={() => onClickGradeCategory("1학년")}
+          onDoubleClick={() => navigate("/main")}
         >
           <FontAwesomeIcon icon={faGraduationCap} color="white" className="icon" />
           <span>1학년</span>
@@ -61,6 +62,7 @@ const Side = () => {
         <div
           className={clickedCategory === "2학년" ? "Selected2" : "Grade"}
           onClick={() => onClickGradeCategory("2학년")}
+          onDoubleClick={() => navigate("/main")}
         >
           <FontAwesomeIcon icon={faGraduationCap} color="white" className="icon" />
           <span>2학년</span>
@@ -68,6 +70,7 @@ const Side = () => {
         <div
           className={clickedCategory === "3학년" ? "Selected3" : "Grade"}
           onClick={() => onClickGradeCategory("3학년")}
+          onDoubleClick={() => navigate("/main")}
         >
           <FontAwesomeIcon icon={faGraduationCap} color="white" className="icon" />
           <span>3학년</span>
