@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CheckClassSide from "../Side/CheckClassSide";
 import "../../style/Class.style/SpecialClass.css";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "../../lib/Modal/Modal";
+import axios from "axios";
+import SERVERURL from "../../Auth/ServerAddr";
 
 const ArtClass = [
   { grade: 1, cls: 1, number: "04", name: "류현서" },
@@ -35,6 +37,22 @@ const GatherClass = [
 ];
 
 const SpecialClass = () => {
+  useEffect(() => {
+    const GetClassList = async () => {
+      const params = { name: "과학실" };
+      const response = await axios.get(
+        SERVERURL + "/teacher/student/list/room",
+
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+          params,
+        },
+      );
+    };
+    GetClassList();
+  }, []);
   const [isClickedCheck, setIsClickedCheck] = useState(null);
   const [isOpenModal1, setIsOpenModal1] = useState(false);
   const [isOpenModal2, setIsOpenModal2] = useState(false);
