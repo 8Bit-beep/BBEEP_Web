@@ -15,6 +15,8 @@ const LabClass = () => {
       case "학반 조회하기":
         navigate("/first-grade");
         break;
+      default:
+        navigate("");
     }
   };
 
@@ -33,8 +35,8 @@ const LabClass = () => {
         </span>
       </div>
       <div className="LabCategory">
-        <div></div>
-        <div></div>
+        <div className="2ndFloor"></div>
+        <div className="3rdFloor"></div>
       </div>
     </div>
   );
