@@ -69,8 +69,8 @@ const ThirdGrade = () => {
         >
           실 조회하기
         </span>
-        <span onClick={() => onClickCheckRoom("학반 조회하기")} className="ClassSelected">
-          학반 조회하기
+        <span onClick={() => onClickCheckRoom("학생 조회하기")} className="ClassSelected">
+          학생 조회하기
         </span>
       </div>
       <div className="Category">

@@ -16,7 +16,7 @@ const ExerciseClass = () => {
     setIsClickedCheck((prevCheck) => (prevCheck === check ? null : check));
 
     switch (check) {
-      case "학반 조회하기":
+      case "학생 조회하기":
         navigate("/first-grade");
         break;
     }
@@ -38,10 +38,10 @@ const ExerciseClass = () => {
           실 조회하기
         </span>
         <span
-          onClick={() => onClickCheckRoom("학반 조회하기")}
-          className={isClickedCheck === "학반 조회하기" ? "Room" : "NoneClick"}
+          onClick={() => onClickCheckRoom("학생 조회하기")}
+          className={isClickedCheck === "학생 조회하기" ? "Room" : "NoneClick"}
         >
-          학반 조회하기
+          학생 조회하기
         </span>
       </div>
       <div className="MainLabCategory">

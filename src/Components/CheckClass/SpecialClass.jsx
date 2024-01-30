@@ -9,7 +9,7 @@ import SERVERURL from "../../Auth/ServerAddr";
 const ArtClass = [
   { grade: 1, cls: 1, number: "04", name: "류현서" },
   { grade: 2, cls: 3, number: "13", name: "손민성" },
-  { grade: 3, cls: 3, number: "6974", name: "우상범" },
+  { grade: 3, cls: 3, number: "03", name: "우상범" },
 ];
 
 const ScienceClass = [
@@ -53,6 +53,15 @@ const SpecialClass = () => {
     };
     GetClassList();
   }, []);
+
+  //sex.com/name?=과학실
+
+  http: axios.get(SERVERURL, {
+    headers: {
+      Authorization: localStorage.getItem("accessToken"),
+    },
+  });
+
   const [isClickedCheck, setIsClickedCheck] = useState(null);
   const [isOpenModal1, setIsOpenModal1] = useState(false);
   const [isOpenModal2, setIsOpenModal2] = useState(false);
@@ -65,7 +74,7 @@ const SpecialClass = () => {
     setIsClickedCheck((prevCheck) => (prevCheck === check ? null : check));
 
     switch (check) {
-      case "학반 조회하기":
+      case "학생 조회하기":
         navigate("/first-grade");
         break;
     }
@@ -107,10 +116,10 @@ const SpecialClass = () => {
           실 조회하기
         </span>
         <span
-          onClick={() => onClickCheckRoom("학반 조회하기")}
-          className={isClickedCheck === "학반 조회하기" ? "Room" : "NoneClick"}
+          onClick={() => onClickCheckRoom("학생 조회하기")}
+          className={isClickedCheck === "학생 조회하기" ? "Room" : "NoneClick"}
         >
-          학반 조회하기
+          학생 조회하기
         </span>
       </div>
       <div className="Category">

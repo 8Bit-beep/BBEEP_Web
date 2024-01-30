@@ -33,9 +33,8 @@ const Login = () => {
         });
 
         const { accessToken } = response.data;
-        
+
         // 여기서 accToken을 필요로 하는 작업 수행
-        
       } catch (error) {
         console.error("Failed AccessToken Refresh", error);
       }
@@ -89,6 +88,9 @@ const Login = () => {
         userId: `${id}`,
         password: `${pw}`,
       });
+
+      
+
 
       if (id === User.id && pw === User.pw) {
         localStorage.setItem("accessToken", response.data.accessToken);
