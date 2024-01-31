@@ -12,7 +12,7 @@ const Main = () => {
       case "실 조회하기":
         navigate("/lab-class");
         break;
-      case "학반 조회하기":
+      case "학생 조회하기":
         navigate("/first-grade");
         break;
     }
@@ -25,8 +25,8 @@ const Main = () => {
         <span className="RoomNoneClick" onClick={() => onClickCheck("실 조회하기")}>
           실 조회하기
         </span>
-        <span className="ClassNoneClick" onClick={() => onClickCheck("학반 조회하기")}>
-          학반 조회하기
+        <span className="ClassNoneClick" onClick={() => onClickCheck("학생 조회하기")}>
+          학생 조회하기
         </span>
       </div>
       <div className="Category"></div>

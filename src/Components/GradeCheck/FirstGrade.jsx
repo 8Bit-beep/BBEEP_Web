@@ -109,7 +109,9 @@ const FirstGrade = () => {
         <div onClick={() => onClickOpenModal(1)}>1반</div>
         <Modal isOpen={isOpenModal1} onClose={() => onClickCloseModal(1)}>
           {FirstClassStudent.map((key) => (
-            <div className="DetailStudentName">{key.name}</div>
+            <>
+              <div className="DetailStudentName">{key.name}</div>
+            </>
           ))}
         </Modal>
         <div onClick={() => onClickOpenModal(2)}>2반</div>
