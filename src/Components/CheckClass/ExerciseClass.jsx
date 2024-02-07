@@ -45,7 +45,7 @@ const ExerciseClass = () => {
         </span>
       </div>
       <div className="MainLabCategory">
-        <div onClick={onClickOpenModal}>강당</div>
+        <div onClick={onClickOpenModal}>엉덩이</div>
         <Modal isOpen={isOpenModal} onClose={onClickCloseModal}>
           {Exercise.map((key) => (
             <div className="ClassDitailStudentName">
