@@ -1,13 +1,13 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import CheckClass from "./components/CheckClass/CheckClass";
+import CheckClass from "./components/CheckStudent/CheckStudent";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/checkClass" element={<CheckClass />} />
+          <Route path="/check-class" element={<CheckClass />} />
         </Routes>
       </div>
     </BrowserRouter>

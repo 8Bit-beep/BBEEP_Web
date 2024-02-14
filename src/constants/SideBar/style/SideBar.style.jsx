@@ -55,6 +55,8 @@ export const StudentMenuSpan = styled.span`
   line-height: normal;
 
   margin-left: 1vw;
+
+  cursor: pointer;
 `;
 
 export const DropDownButtonImg = styled.img`
@@ -75,12 +77,14 @@ export const StudentMenuCategories = styled.div`
 export const StudentMenuCategory = styled.div`
   width: 100%;
   height: 33%;
-  background: #3cb0b8;
-
   display: flex;
 
   align-items: center;
   align-self: center;
+
+  cursor: pointer;
+
+  background: ${(props) => (props.backgroundColor ? "#3CB0B8" : "transparent")};
 `;
 
 export const GradeImg = styled.img`
@@ -137,6 +141,8 @@ export const LabMenuSpan = styled.span`
   line-height: normal;
 
   margin-left: 1vw;
+
+  cursor: pointer;
 `;
 
 export const LabMenuCategories = styled.div`
@@ -154,6 +160,8 @@ export const LabMenuCategory = styled.div`
 
   align-items: center;
   align-self: center;
+
+  cursor: pointer;
 `;
 
 export const LabImg = styled.img`

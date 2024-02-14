@@ -1,6 +1,7 @@
 import React from "react";
 import SideBar from "../../constants/SideBar/SideBar";
-const CheckClass = () => {
+
+const Tesct = () => {
   return (
     <div>
       <SideBar />
@@ -8,4 +9,4 @@ const CheckClass = () => {
   );
 };
 
-export default CheckClass;
+export default Tesct;
