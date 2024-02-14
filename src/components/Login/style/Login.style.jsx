@@ -118,4 +118,8 @@ export const LoginButton = styled.button`
   &:focus {
     outline: none;
   }
+
+  &:disabled {
+    background-color: #dddddd;
+  }
 `;
