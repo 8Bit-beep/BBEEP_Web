@@ -1,0 +1,99 @@
+.GradeCheckWrapper {
+  display: flex;
+}
+
+.Category {
+  display: flex;
+  position: absolute;
+  left: 320px;
+  width: 1390px;
+  bottom: 0px;
+  height: 830px;
+  flex-direction: column;
+  background: #e4e8ef;
+}
+
+.Category > div {
+  display: flex;
+  height: 100px;
+  border-radius: 10px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin: 30px;
+  padding-left: 80px;
+
+  align-items: center;
+
+  color: #000;
+  font-family: "SBAggroB";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.HeaderBar {
+  display: flex;
+  position: absolute;
+
+  flex-direction: row;
+  left: 320px;
+  height: 120px;
+  width: 1390px;
+  background: #f6f7f9;
+  justify-content: right;
+}
+
+.NoneClick {
+  color: #000;
+  font-family: "SBAggroB";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 50px;
+  margin-top: 25px;
+}
+
+.Room {
+  color: #004ba4;
+  font-family: "SBAggroB";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 50px;
+  margin-top: 25px;
+}
+
+.ClassSelected {
+  color: #004ba4;
+  font-family: "SBAggroB";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 50px;
+  margin-top: 25px;
+}
+
+.DetailStudentName {
+  width: 80vw;
+  height: 8vh;
+
+  border-radius: 10px;
+  background: #f6f7f9;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  margin-bottom: 3vh;
+  margin-left: 5vw;
+
+  padding-left: 2vw;
+
+  display: flex;
+  align-items: center;
+}
+
+.DetailStudentName:nth-child(1) {
+  margin-top: 7vh;
+}

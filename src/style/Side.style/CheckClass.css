@@ -1,0 +1,148 @@
+.ClassSideBarWrap h1 {
+  font-size: 9rem;
+  margin-left: 4vw;
+  margin-top: 2vh;
+
+  cursor: pointer;
+}
+
+.ClassSideBarWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.ClassSideBarWrap > .Class {
+  width: 20vw;
+  height: 8vh;
+
+  margin-top: 3vh;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: center;
+
+  font-family: "SBAggroB";
+  font-size: 1rem;
+  color: #fff;
+
+  background-color: #d7d7d7;
+
+  cursor: pointer;
+}
+
+.Selected1 {
+  width: 20vw;
+  height: 8vh;
+
+  margin-top: 6vh;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: center;
+
+  font-family: "SBAggroB";
+  font-size: 1.3rem;
+  color: #fff;
+  background: #346287;
+
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+}
+
+.Selected2 {
+  width: 20vw;
+  height: 8vh;
+
+  margin-top: 6vh;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: center;
+
+  font-family: "SBAggroB";
+  font-size: 1.3rem;
+  color: #fff;
+  background: #3cb0b8;
+
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+}
+
+.Selected3 {
+  width: 20vw;
+  height: 8vh;
+
+  margin-top: 6vh;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: center;
+
+  font-family: "SBAggroB";
+  font-size: 1.3rem;
+  color: #fff;
+  background: #303a46;
+
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+}
+
+.Selected4 {
+  width: 20vw;
+  height: 8vh;
+
+  margin-top: 6vh;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: center;
+
+  font-family: "SBAggroB";
+  font-size: 1.3rem;
+  color: #fff;
+  background: #73899b;
+
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+}
+
+.icon {
+  margin-left: 1vw;
+
+  margin-right: 1vw;
+}
+
+.ShowChatBtn {
+  width: calc(100vw - 88vw);
+  height: calc(100vh - 94vh);
+
+  border: none;
+  border-radius: 20px;
+  background-color: #4d7392;
+
+  margin-left: 3vw;
+  margin-top: 23vh;
+
+  background-image: url(../../img/SmsIcon.svg);
+  background-repeat: no-repeat;
+  background-position: 3vh;
+  background-size: 1.5vw;
+
+  color: #fff;
+  font-family: "SBAggroB";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  padding-left: 2vw;
+}
