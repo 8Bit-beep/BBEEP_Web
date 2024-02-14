@@ -1,17 +1,14 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./Components/Login/Login";
-import Main from "./Components/Main/Main";
-import LabClass from "./Components/CheckClass/LabClass";
-import MainClass from "./Components/CheckClass/MainClass";
-import FirstGrade from "./Components/GradeCheck/FirstGrade";
-import SecondGrade from "./Components/GradeCheck/SecondGrade";
-import ThirdGrade from "./Components/GradeCheck/ThirdGrade";
-import SpecialClass from "./Components/CheckClass/SpecialClass";
+import Login from "./components/Login/Login";
+import Main from "./components/Main/Main";
+import LabClass from "./components/CheckClass/LabClass";
+import FirstGrade from "./components/GradeCheck/FirstGrade";
+import SecondGrade from "./components/GradeCheck/SecondGrade";
+import ThirdGrade from "./components/GradeCheck/ThirdGrade";
 import SERVERURL from "./Auth/ServerAddr";
 import axios from "axios";
 import { useEffect } from "react";
-import ExerciseClass from "./Components/CheckClass/ExerciseClass";
 
 function App() {
   // useEffect(() => {
@@ -43,9 +40,6 @@ function App() {
           <Route path="/first-grade" element={<FirstGrade />} />
           <Route path="/second-grade" element={<SecondGrade />} />
           <Route path="/third-grade" element={<ThirdGrade />} />
-          <Route path="/special-class" element={<SpecialClass />} />
-          <Route path="/Main-class" element={<MainClass />} />
-          <Route path="/Exercise-Class" element={<ExerciseClass/>} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -65,31 +65,6 @@ const CheckClassSide = () => {
           <FontAwesomeIcon icon={faCode} color="white" className="icon" />
           <span>실습동</span>
         </div>
-        <div
-          className={clickedCategory === "본관 1층" ? "Selected2" : "Class"}
-          onClick={() => onClickGradeCategory("본관 1층")}
-          onDoubleClick={() => navigate("/main")}
-        >
-          <FontAwesomeIcon icon={faSchool} color="white" className="icon" />
-          <span>본관 1층</span>
-        </div>
-        <div
-          className={clickedCategory === "강당" ? "Selected3" : "Class"}
-          onClick={() => onClickGradeCategory("강당")}
-          onDoubleClick={() => navigate("/main")}
-        >
-          <FontAwesomeIcon icon={faDumbbell} color="white" className="icon" />
-          <span>강당</span>
-        </div>
-        <div
-          className={clickedCategory === "별관" ? "Selected4" : "Class"}
-          onClick={() => onClickGradeCategory("별관")}
-          onDoubleClick={() => navigate("/main")}
-        >
-          <FontAwesomeIcon icon={faStar} color="white" className="icon" />
-          <span>별관</span>
-        </div>
-        <button className="ShowChatBtn">메시지 보기</button>
       </div>
     </div>
   );

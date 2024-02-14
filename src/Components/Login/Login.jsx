@@ -25,22 +25,22 @@ const Login = () => {
   const [data, setData] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const refreshAccessToken = async () => {
-      try {
-        const response = await axios.post(SERVERURL + "/api/refresh-token", {
-          refreshToken: `${localStorage.getItem("refreshToken")}`,
-        });
+  // useEffect(() => {
+  //   const refreshAccessToken = async () => {
+  //     try {
+  //       const response = await axios.post(SERVERURL + "/api/refresh-token", {
+  //         refreshToken: `${localStorage.getItem("refreshToken")}`,
+  //       });
 
-        const { accessToken } = response.data;
+  //       const { accessToken } = response.data;
 
-        // 여기서 accToken을 필요로 하는 작업 수행
-      } catch (error) {
-        console.error("Failed AccessToken Refresh", error);
-      }
-    };
-    refreshAccessToken();
-  }, []);
+  //       // 여기서 accToken을 필요로 하는 작업 수행
+  //     } catch (error) {
+  //       console.error("Failed AccessToken Refresh", error);
+  //     }
+  //   };
+  //   refreshAccessToken();
+  // }, []);
 
   useEffect(() => {
     if (idValid && pwValid) {
