@@ -6,7 +6,6 @@
 /.idea
 /.pnp
 .pnp.js
-/Auth
 
 # testing
 /coverage
