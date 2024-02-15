@@ -4,7 +4,7 @@ import useLogin from "../../Hook/auth/useLogin";
 import axios from "axios";
 
 const Login = () => {
-  const { id, pw, isValid, handleId, handlePw, onclickConfirnButton } = useLogin();
+  const { id, pw, handleId, handlePw, onclickConfirmButton } = useLogin();
 
   return (
     <S.LoginWrap>
@@ -21,7 +21,7 @@ const Login = () => {
               <S.LoginMaintain type="checkbox" />
               <span>로그인 유지</span>
             </S.LoginMaintainWrap>
-            <S.LoginButton onClick={onclickConfirnButton}>로그인</S.LoginButton>
+            <S.LoginButton onClick={onclickConfirmButton}>로그인</S.LoginButton>
           </S.loginobj>
         </S.MainWrapper>
       </S.Main>

@@ -57,6 +57,8 @@ export const SelectClassImgWrap = styled.div`
   align-self: center;
 
   justify-content: space-around;
+
+  cursor: pointer;
 `;
 
 export const ViewInfomationWrap = styled.div`
