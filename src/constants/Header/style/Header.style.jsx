@@ -19,6 +19,35 @@ export const Logo = styled.img`
   cursor: pointer;
 `;
 
+export const DropDownWrap = styled.div`
+  width: calc(100vw - 87vw);
+  height: calc(100vh - 95vh);
+
+  border: none;
+  border-radius: 50px;
+
+  background-color: ${(props) => (props.isClicked ? "#3CB0B8" : "#aaaaaa")};
+
+  display: flex;
+  align-items: center;
+  align-self: center;
+
+  cursor: pointer;
+
+  img {
+    margin-left: 1vw;
+  }
+
+  span {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+
+    margin-left: 1.3vw;
+  }
+`;
+
 export const SearchWrap = styled.div`
   width: calc(100vw - 73vw);
   height: calc(100vh - 96vh);
@@ -65,7 +94,7 @@ export const TeacherWrap = styled.div`
   width: calc(100vw - 85vw);
   height: calc(100vh - 92vh);
 
-  margin-left: 40vw;
+  margin-left: 6vw;
 
   display: flex;
   align-items: center;

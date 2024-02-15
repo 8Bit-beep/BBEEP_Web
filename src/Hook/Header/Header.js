@@ -1,3 +1,0 @@
-const useHeader = () => {
-  //searchLogic
-};

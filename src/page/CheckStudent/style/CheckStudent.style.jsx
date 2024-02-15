@@ -47,12 +47,23 @@ export const ClassNumber = styled.span`
   line-height: normal;
 `;
 
+export const SelectClassImgWrap = styled.div`
+  width: 100%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+
+  justify-content: space-around;
+`;
+
 export const ViewInfomationWrap = styled.div`
   width: 100%;
   height: 100%;
 
-  display: flex;
-  flex-direction: column;
+  overflow-y: auto;
 `;
 
 export const ViewInfoUtilityWrap = styled.div`
@@ -83,15 +94,19 @@ export const ViewInfoUtilityWrap = styled.div`
 export const ViewInfoStudentWrap = styled.div`
   width: 100%;
   height: 7%;
+  max-height: 10%;
 
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 
   border-bottom: 1px solid #adadad;
   align-items: center;
   align-self: center;
 
   justify-content: space-around;
+  overflow-y: auto; // y축 스크롤 적용
+  box-sizing: border-box;
 `;
 
 export const ViewInfoStudentName = styled.span`

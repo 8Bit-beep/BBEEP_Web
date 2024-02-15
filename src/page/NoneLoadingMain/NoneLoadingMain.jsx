@@ -1,7 +1,7 @@
 import React from "react";
 import SideBar from "../../constants/SideBar/SideBar";
 
-const Tesct = () => {
+const NoneLoadingMain = () => {
   return (
     <div>
       <SideBar />
@@ -9,4 +9,4 @@ const Tesct = () => {
   );
 };
 
-export default Tesct;
+export default NoneLoadingMain;
