@@ -12,7 +12,7 @@ import ClassFourD from "../../assets/img/Class4d.svg";
 import useCheckClass from "../../Hook/CheckStudent/useCheckStudent";
 
 const CheckStudent = () => {
-  const { isClickMenu, handleClickMenu, studentClassList } = useCheckClass();
+  const { isClickMenu, isClickStu, handleClickMenu, studentClassList, handleClickStu } = useCheckClass();
 
   return (
     <S.CheckClassWrap>
@@ -34,7 +34,7 @@ const CheckStudent = () => {
           {/* {studentClassList.map((key, idx) => {
             if (isClickMenu === key.classNumber.substring(1, 2) + "반") {
               return (
-                <S.ViewInfoStudentWrap key={idx}>
+                <S.ViewInfoStudentWrap key={idx} isClicked={isClickStu} onClick={handleClickStu}>
                   <S.ViewInfoStudentName>{key.name}</S.ViewInfoStudentName>
                   <S.ViewInfoStudentClassNumber>{key.classNumber}</S.ViewInfoStudentClassNumber>
                   <S.ViewinfoStudentFloor>{key.floor}</S.ViewinfoStudentFloor>

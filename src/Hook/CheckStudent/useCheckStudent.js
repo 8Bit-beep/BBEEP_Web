@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import UseSideBarNavigation from "../../util/SideBar/useSideBarNavigation";
 import CONFIG from "../../config/config.json";
+import Cookies from "js-cookie";
 const useCheckClass = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isClickMenu, setIsClickMenu] = useState("1반");
+  const [isClickStu, setIsClickStu] = useState(false);
   const [studentClassList, setStudentClassList] = useState([{}]);
   const { isClickCategory } = UseSideBarNavigation({ location, navigate });
 
@@ -19,11 +21,11 @@ const useCheckClass = () => {
         };
         const response = await axios.get(`${CONFIG.serverUrl}teacher/student/list`, {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            Authorization: `Bearer ${Cookies.get("accessToken")}`,
           },
           params,
         });
-        setStudentClassList(response.data);
+        setStudentClassList(...response.data);
         console.log(studentClassList);
       } catch (error) {
         console.error(error);
@@ -36,10 +38,16 @@ const useCheckClass = () => {
     setIsClickMenu((prevItem) => (prevItem === itemName ? null : itemName));
   };
 
+  const handleClickStu = () => {
+    setIsClickStu((prev) => !prev);
+  };
+
   return {
     isClickMenu,
+    isClickStu,
     handleClickMenu,
     studentClassList,
+    handleClickStu,
   };
 };
 

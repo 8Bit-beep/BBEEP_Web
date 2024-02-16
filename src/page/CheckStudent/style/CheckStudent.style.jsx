@@ -109,6 +109,8 @@ export const ViewInfoStudentWrap = styled.div`
   justify-content: space-around;
   overflow-y: auto; // y축 스크롤 적용
   box-sizing: border-box;
+
+  background-color: ${(props) => (props.isClicked ? "#3CB0B8" : "transparent")};
 `;
 
 export const ViewInfoStudentName = styled.span`
