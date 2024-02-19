@@ -1,14 +1,11 @@
 import React from "react";
 import SideBar from "../../constants/SideBar/CheckClass/index";
-import * as S from "../style/CheckStudent.style";
-import ClassOne from "../../assets/img/Class1.svg";
-import ClassOneD from "../../assets/img/Class1d.svg";
-import ClassTwo from "../../assets/img/Class2.svg";
-import ClassTwoD from "../../assets/img/Class2d.svg";
+import * as S from "./style/style";
 import useCheckClass from "../../Hook/CheckStudent/useCheckStudent";
-
+import Floor1 from "../../assets/img/1.svg";
+import Floor2 from "../../assets/img/2.svg";
 const CheckClass = () => {
-  const { isClickMenu, handleClickMenu, studentClassList } = useCheckClass();
+  const { isClicked, ImgData, handleImgChange } = useCheckClass();
 
   return (
     <S.CheckClassWrap>
@@ -16,8 +13,15 @@ const CheckClass = () => {
       <S.CheckClassMain>
         <S.ViewInfomationWrap>
           <S.SelectClassImgWrap>
-            <img src={isClickMenu === "1반" ? ClassOne : ClassOneD} alt="" onClick={() => handleClickMenu("1반")} />
-            <img src={isClickMenu === "2반" ? ClassTwo : ClassTwoD} alt="" onClick={() => handleClickMenu("2반")} />
+            {ImgData.map((key, idx) => (
+              <div key={idx}>
+                <img
+                  src={isClicked === `${idx + 1}` ? key.clicked : key.default}
+                  onClick={() => handleImgChange(`${idx + 1}`)}
+                />
+                <span>{key.text}</span>
+              </div>
+            ))}
           </S.SelectClassImgWrap>
           <S.ViewInfoUtilityWrap>
             <span>이름</span>
