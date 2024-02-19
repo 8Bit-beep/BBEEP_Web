@@ -24,30 +24,28 @@ const useLogin = () => {
     } else {
       try {
         const response = await axios.post(`${CONFIG.serverUrl}auth/sign-in`, {
-          userId: `${id}`,
+          id: `${id}`,
           password: `${pw}`,
         });
-        if (response.status === 200) {
+        if (response.status === 201) {
           showToast("success", "로그인 성공");
           navigate("/main");
           Cookies.set("accessToken", response.data.accessToken);
-          Cookies.set("refreshToken", response.data.refreshToken);
         } else {
           showToast("error", "로그인 실패");
         }
       } catch (error) {
-        if (error.response && error.response.status === 401) {
+        if (error.response && error.status === 401) {
           try {
-            const refreshToken = Cookies.get("refreshToken");
-            const refreshResponse = await axios.post(`${CONFIG.serverUrl}auth/refresh-token`, {
-              refreshToken,
+            const accessToken = Cookies.get("accessToken");
+            const refreshResponse = await axios.post(`${CONFIG.serverUrl}auth/refresh`, {
+              accessToken,
             });
             if (refreshResponse.status === 200) {
               showToast("success", "토큰 재발급 성공");
-              const newAccessToken = refreshResponse.data.accessToken;
+              const newAccessToken = refreshResponse.accessToken;
+              Cookies.remove("accessToken");
               Cookies.set("accessToken", newAccessToken);
-              // 재발급된 accessToken을 사용하여 다시 로그인 처리
-              await onclickConfirmButton();
             } else {
               showToast("error", "토큰 재발급 실패");
             }
@@ -55,6 +53,7 @@ const useLogin = () => {
             console.error(refreshError);
           }
         } else {
+          showToast("error", "로그인 실패");
           console.error(error);
         }
       }

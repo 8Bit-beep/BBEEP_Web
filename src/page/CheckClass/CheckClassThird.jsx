@@ -1,5 +1,5 @@
 import React from "react";
-import StudentSideBar from "../../constants/SideBar/CheckStudent/SideBar";
+import SideBar from "../../constants/SideBar/CheckClass/index";
 import * as S from "../style/CheckStudent.style";
 import ClassOne from "../../assets/img/Class1.svg";
 import ClassOneD from "../../assets/img/Class1d.svg";
@@ -11,19 +11,17 @@ import ClassFour from "../../assets/img/Class4.svg";
 import ClassFourD from "../../assets/img/Class4d.svg";
 import useCheckClass from "../../Hook/CheckStudent/useCheckStudent";
 
-const CheckStudent = () => {
-  const { isClickMenu, isClickStu, handleClickMenu, studentClassList, handleClickStu } = useCheckClass();
+const CheckClassThird = () => {
+  const { isClickMenu, handleClickMenu, studentClassList } = useCheckClass();
 
   return (
     <S.CheckClassWrap>
-      <StudentSideBar />
+      <SideBar />
       <S.CheckClassMain>
         <S.ViewInfomationWrap>
           <S.SelectClassImgWrap>
             <img src={isClickMenu === "1반" ? ClassOne : ClassOneD} alt="" onClick={() => handleClickMenu("1반")} />
             <img src={isClickMenu === "2반" ? ClassTwo : ClassTwoD} alt="" onClick={() => handleClickMenu("2반")} />
-            <img src={isClickMenu === "3반" ? ClassThree : ClassThreeD} alt="" onClick={() => handleClickMenu("3반")} />
-            <img src={isClickMenu === "4반" ? ClassFour : ClassFourD} alt="" onClick={() => handleClickMenu("4반")} />
           </S.SelectClassImgWrap>
           <S.ViewInfoUtilityWrap>
             <span>이름</span>
@@ -34,7 +32,7 @@ const CheckStudent = () => {
           {/* {studentClassList.map((key, idx) => {
             if (isClickMenu === key.classNumber.substring(1, 2) + "반") {
               return (
-                <S.ViewInfoStudentWrap key={idx} isClicked={isClickStu} onClick={handleClickStu}>
+                <S.ViewInfoStudentWrap key={idx}>
                   <S.ViewInfoStudentName>{key.name}</S.ViewInfoStudentName>
                   <S.ViewInfoStudentClassNumber>{key.classNumber}</S.ViewInfoStudentClassNumber>
                   <S.ViewinfoStudentFloor>{key.floor}</S.ViewinfoStudentFloor>
@@ -45,19 +43,10 @@ const CheckStudent = () => {
               return null;
             }
           })} */}
-
-          {isClickMenu === "1반" && (
-            <S.ViewInfoStudentWrap isClicked={isClickStu} onClick={handleClickStu}>
-              <S.ViewInfoStudentName>신민호</S.ViewInfoStudentName>
-              <S.ViewInfoStudentClassNumber>1116</S.ViewInfoStudentClassNumber>
-              <S.ViewinfoStudentFloor>2층</S.ViewinfoStudentFloor>
-              <S.ViewInfoStudentClass>10실</S.ViewInfoStudentClass>
-            </S.ViewInfoStudentWrap>
-          )}
         </S.ViewInfomationWrap>
       </S.CheckClassMain>
     </S.CheckClassWrap>
   );
 };
 
-export default CheckStudent;
+export default CheckClassThird;

@@ -9,7 +9,19 @@ const useHeader = ({ location, navigate }) => {
       case "/check-student/first-grade":
         setIsClicked("학생 조회하기");
         break;
-      case "/check-class/lab":
+      case "/check-student/second-grade":
+        setIsClicked("학생 조회하기");
+        break;
+      case "/check-student/third-grade":
+        setIsClicked("학생 조회하기");
+        break;
+      case "/check-class/first-floor":
+        setIsClicked("실 조회하기");
+        break;
+      case "/check-class/second-floor":
+        setIsClicked("실 조회하기");
+        break;
+      case "/check-class/third-floor":
         setIsClicked("실 조회하기");
         break;
       default:
@@ -26,7 +38,7 @@ const useHeader = ({ location, navigate }) => {
         navigate("/check-student/first-grade");
         break;
       case "실 조회하기":
-        navigate("/check-class/lab");
+        navigate("/check-class/first-floor");
         break;
       default:
         navigate("");

@@ -12,27 +12,27 @@ const useCheckClass = () => {
   const [studentClassList, setStudentClassList] = useState([{}]);
   const { isClickCategory } = UseSideBarNavigation({ location, navigate });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const params = {
-          grade: `${Number(isClickCategory.substring(0, 1))}`,
-          cls: `${Number(isClickMenu.substring(0, 1))}`,
-        };
-        const response = await axios.get(`${CONFIG.serverUrl}teacher/student/list`, {
-          headers: {
-            Authorization: `Bearer ${Cookies.get("accessToken")}`,
-          },
-          params,
-        });
-        setStudentClassList(...response.data);
-        console.log(studentClassList);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }, [isClickCategory, isClickMenu]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const params = {
+  //         grade: `${Number(isClickCategory.substring(0, 1))}`,
+  //         cls: `${Number(isClickMenu.substring(0, 1))}`,
+  //       };
+  //       const response = await axios.get(`${CONFIG.serverUrl}teacher/student/list`, {
+  //         headers: {
+  //           Authorization: `Bearer ${Cookies.get("accessToken")}`,
+  //         },
+  //         params,
+  //       });
+  //       setStudentClassList(...response.data);
+  //       console.log(studentClassList);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [isClickCategory, isClickMenu]);
 
   const handleClickMenu = (itemName) => {
     setIsClickMenu((prevItem) => (prevItem === itemName ? null : itemName));

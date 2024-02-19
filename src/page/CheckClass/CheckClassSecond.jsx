@@ -1,17 +1,13 @@
 import React from "react";
-import SideBar from "../../constants/SideBar/SideBar";
-import * as S from "../CheckStudent/style/CheckStudent.style";
+import SideBar from "../../constants/SideBar/CheckClass/index";
+import * as S from "../style/CheckStudent.style";
 import ClassOne from "../../assets/img/Class1.svg";
 import ClassOneD from "../../assets/img/Class1d.svg";
 import ClassTwo from "../../assets/img/Class2.svg";
 import ClassTwoD from "../../assets/img/Class2d.svg";
-import ClassThree from "../../assets/img/Class3.svg";
-import ClassThreeD from "../../assets/img/Class3d.svg";
-import ClassFour from "../../assets/img/Class4.svg";
-import ClassFourD from "../../assets/img/Class4d.svg";
 import useCheckClass from "../../Hook/CheckStudent/useCheckStudent";
 
-const CheckClass = () => {
+const CheckClassSecond = () => {
   const { isClickMenu, handleClickMenu, studentClassList } = useCheckClass();
 
   return (
@@ -49,4 +45,4 @@ const CheckClass = () => {
   );
 };
 
-export default CheckClass;
+export default CheckClassSecond;

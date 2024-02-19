@@ -1,10 +1,10 @@
 import React from "react";
-import * as S from "./style/SideBar.style.jsx";
-import Header from "../Header/Header.jsx";
-import FirstGradeImg from "../../assets/img/1.svg";
-import SecondGradeImg from "../../assets/img/2.svg";
-import ThirdGradeImg from "../../assets/img/3.svg";
-import UseSideBarNavigation from "../../util/SideBar/useSideBarNavigation.jsx";
+import * as S from "../style/SideBar.style.jsx";
+import Header from "../../Header/Header.jsx";
+import FirstGradeImg from "../../../assets/img/1.svg";
+import SecondGradeImg from "../../../assets/img/2.svg";
+import ThirdGradeImg from "../../../assets/img/3.svg";
+import UseSideBarNavigation from "../../../util/SideBar/useSideBarNavigation.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const SideBar = () => {

@@ -1,6 +1,6 @@
 import React from "react";
-import SideBar from "../../constants/SideBar/SideBar";
-import * as S from "./style/CheckStudent.style";
+import SideBar from "../../constants/SideBar/CheckStudent/SideBar";
+import * as S from "../style/CheckStudent.style";
 import ClassOne from "../../assets/img/Class1.svg";
 import ClassOneD from "../../assets/img/Class1d.svg";
 import ClassTwo from "../../assets/img/Class2.svg";
