@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CheckStudent from "./page/CheckStudent/CheckStudent";
 import CheckStudentSecond from "./page/CheckStudent/CheckStudentSecond";
-import CheckStudentThird from "./page/CheckClass/CheckClassThird";
+import CheckStudentThird from "./page/CheckStudent/CheckStudentThird";
 import NoneLoadingMain from "./page/NoneLoadingMain/NoneLoadingMain";
 import Login from "./components/Login/Login";
 import CheckClass from "./page/CheckClass/CheckClass";

@@ -96,19 +96,23 @@ export const ViewInfoUtilityWrap = styled.div`
 export const ViewInfoStudentWrap = styled.div`
   width: 100%;
   height: 7%;
-  max-height: 10%;
 
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
 
   border-bottom: 1px solid #adadad;
   align-items: center;
   align-self: center;
 
-  justify-content: space-around;
-  overflow-y: auto; // y축 스크롤 적용
-  box-sizing: border-box;
+  span {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
 
   background-color: ${(props) => (props.isClicked ? "#3CB0B8" : "transparent")};
 `;
@@ -121,6 +125,8 @@ export const ViewInfoStudentName = styled.span`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  margin-left: 10vw;
 `;
 
 export const ViewInfoStudentClassNumber = styled.span`
@@ -131,6 +137,8 @@ export const ViewInfoStudentClassNumber = styled.span`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  margin-left: 19.5vw;
 `;
 
 export const ViewinfoStudentFloor = styled.span`
@@ -141,6 +149,8 @@ export const ViewinfoStudentFloor = styled.span`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  margin-left: 21vw;
 `;
 
 export const ViewInfoStudentClass = styled.span`
@@ -151,4 +161,6 @@ export const ViewInfoStudentClass = styled.span`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  margin-left: 19vw;
 `;

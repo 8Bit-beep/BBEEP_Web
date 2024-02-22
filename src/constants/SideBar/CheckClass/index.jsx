@@ -22,25 +22,25 @@ const ClassSideBar = () => {
         <S.StudentMenu>
           <S.StudentMenuCategories>
             <S.StudentMenuCategory
-              onClick={() => handleCategoryClick("1학년")}
-              backgroundColor={isClickCategory === "1학년"}
+              onClick={() => handleCategoryClick("1층")}
+              backgroundColor={isClickCategory === "1층"}
             >
               <S.GradeImg src={FirstGradeImg} />
-              <S.GradeSpan>1학년</S.GradeSpan>
+              <S.GradeSpan>1층</S.GradeSpan>
             </S.StudentMenuCategory>
             <S.StudentMenuCategory
-              onClick={() => handleCategoryClick("2학년")}
-              backgroundColor={isClickCategory === "2학년"}
+              onClick={() => handleCategoryClick("2층")}
+              backgroundColor={isClickCategory === "2층"}
             >
               <S.GradeImg src={SecondGradeImg} />
-              <S.GradeSpan>2학년</S.GradeSpan>
+              <S.GradeSpan>2층</S.GradeSpan>
             </S.StudentMenuCategory>
             <S.StudentMenuCategory
-              onClick={() => handleCategoryClick("3학년")}
-              backgroundColor={isClickCategory === "3학년"}
+              onClick={() => handleCategoryClick("3층")}
+              backgroundColor={isClickCategory === "3층"}
             >
               <S.GradeImg src={ThirdGradeImg} />
-              <S.GradeSpan>3학년</S.GradeSpan>
+              <S.GradeSpan>3층</S.GradeSpan>
             </S.StudentMenuCategory>
           </S.StudentMenuCategories>
         </S.StudentMenu>

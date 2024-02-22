@@ -45,13 +45,36 @@ const CheckStudent = () => {
               return null;
             }
           })} */}
-
           {isClickMenu === "1반" && (
-            <S.ViewInfoStudentWrap isClicked={isClickStu} onClick={handleClickStu}>
+            <S.ViewInfoStudentWrap isClicked={isClickStu === "신민호"} onClick={() => handleClickStu("신민호")}>
               <S.ViewInfoStudentName>신민호</S.ViewInfoStudentName>
               <S.ViewInfoStudentClassNumber>1116</S.ViewInfoStudentClassNumber>
               <S.ViewinfoStudentFloor>2층</S.ViewinfoStudentFloor>
-              <S.ViewInfoStudentClass>10실</S.ViewInfoStudentClass>
+              <S.ViewInfoStudentClass>LAB 10실</S.ViewInfoStudentClass>
+            </S.ViewInfoStudentWrap>
+          )}
+          {isClickMenu === "2반" && (
+            <S.ViewInfoStudentWrap isClicked={isClickStu === "이해준"} onClick={() => handleClickStu("이해준")}>
+              <S.ViewInfoStudentName>이해준</S.ViewInfoStudentName>
+              <S.ViewInfoStudentClassNumber>1214</S.ViewInfoStudentClassNumber>
+              <S.ViewinfoStudentFloor>1층</S.ViewinfoStudentFloor>
+              <S.ViewInfoStudentClass>프로젝트 1실</S.ViewInfoStudentClass>
+            </S.ViewInfoStudentWrap>
+          )}
+          {isClickMenu === "3반" && (
+            <S.ViewInfoStudentWrap isClicked={isClickStu === "전민찬"} onClick={() => handleClickStu("전민찬")}>
+              <S.ViewInfoStudentName>전민찬</S.ViewInfoStudentName>
+              <S.ViewInfoStudentClassNumber>1318</S.ViewInfoStudentClassNumber>
+              <S.ViewinfoStudentFloor>3층</S.ViewinfoStudentFloor>
+              <S.ViewInfoStudentClass>LAB 21실</S.ViewInfoStudentClass>
+            </S.ViewInfoStudentWrap>
+          )}
+          {isClickMenu === "4반" && (
+            <S.ViewInfoStudentWrap isClicked={isClickStu === "배채희"} onClick={() => handleClickStu("배채희")}>
+              <S.ViewInfoStudentName>배채희</S.ViewInfoStudentName>
+              <S.ViewInfoStudentClassNumber>1402</S.ViewInfoStudentClassNumber>
+              <S.ViewinfoStudentFloor>1층</S.ViewinfoStudentFloor>
+              <S.ViewInfoStudentClass>프로젝트2실</S.ViewInfoStudentClass>
             </S.ViewInfoStudentWrap>
           )}
         </S.ViewInfomationWrap>
