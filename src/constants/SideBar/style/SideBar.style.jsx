@@ -29,23 +29,6 @@ export const StudentMenu = styled.div`
   margin-top: 1vh;
 `;
 
-export const StudentMenuTitle = styled.div`
-  width: 100%;
-  height: 25%;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-self: center;
-`;
-
-export const StudentTitleImg = styled.img`
-  width: 23px;
-  height: 28px;
-  margin-left: 1vw;
-  margin-top: -1vh;
-`;
-
 export const StudentMenuSpan = styled.span`
   color: #fff;
   font-family: Inter;
@@ -69,14 +52,15 @@ export const DropDownButtonImg = styled.img`
 `;
 
 export const StudentMenuCategories = styled.div`
-  width: 80%;
-  height: 80%;
-  margin-left: 2.6vw;
+  width: 100%;
+  height: 100%;
+
+  margin-top: -1vh;
 `;
 
 export const StudentMenuCategory = styled.div`
   width: 100%;
-  height: 33%;
+  height: 35%;
   display: flex;
 
   align-items: center;
