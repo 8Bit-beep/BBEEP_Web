@@ -1,20 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { showToast } from "../../lib/Swal/Swal";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import CONFIG from "../../config/config.json";
 import Cookies from "js-cookie";
 
-const User = {
-  id: "test",
-  pw: "1234",
-};
-
 const useLogin = () => {
   const navigate = useNavigate();
   const [id, setId] = useState();
   const [pw, setPw] = useState();
-  const [isAccessToken, setIsAccesToken] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleId = (event) => {
     setId(event.target.value);
@@ -22,6 +17,14 @@ const useLogin = () => {
 
   const handlePw = (event) => {
     setPw(event.target.value);
+  };
+
+  const handleLoggedIn = () => {
+    if (Cookies.get("accessToken")) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
   };
 
   const onclickConfirmButton = async () => {
@@ -37,7 +40,6 @@ const useLogin = () => {
           showToast("success", "로그인 성공");
           navigate("/main");
           Cookies.set("accessToken", response.data.accessToken);
-          setIsAccesToken(true);
         } else {
           showToast("error", "로그인 실패");
         }
@@ -53,7 +55,6 @@ const useLogin = () => {
               const newAccessToken = refreshResponse.accessToken;
               Cookies.remove("accessToken");
               Cookies.set("accessToken", newAccessToken);
-              setIsAccesToken(true);
             } else {
               showToast("error", "토큰 재발급 실패");
             }
@@ -74,7 +75,8 @@ const useLogin = () => {
     handleId,
     handlePw,
     onclickConfirmButton,
-    isAccessToken,
+    handleLoggedIn,
+    isLoggedIn,
   };
 };
 
