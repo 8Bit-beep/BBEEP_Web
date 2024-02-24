@@ -24,7 +24,7 @@ const Login = () => {
                 <S.ps placeholder="비밀번호" onChange={handlePw} value={pw} type="password" />
                 <S.LoginMaintainWrap>
                   <S.LoginMaintain type="checkbox" onChange={handleLoggedIn} />
-                  <span>로그인 유지</span>
+                  <span>로그인 유지랄병</span>
                 </S.LoginMaintainWrap>
                 <S.LoginButton onClick={onclickConfirmButton}>로그인</S.LoginButton>
               </S.loginobj>
