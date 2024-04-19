@@ -5,28 +5,34 @@ import NoneLoadingMain from "../../page/NoneLoadingMain/NoneLoadingMain";
 import axios from "axios";
 
 const Login = () => {
-  const { id, pw, handleId, handlePw, onclickConfirmButton, handleLoggedIn, isLoggedIn } = useLogin();
+  const { ...hooks } = useLogin();
 
   return (
     <>
-      {isLoggedIn ? (
+      {hooks.isLoggedIn ? (
         <NoneLoadingMain />
       ) : (
         <S.LoginWrap>
           <S.Main>
-            <S.Mainimg src={Mainimage}></S.Mainimg>
+            <S.Mainimg src={Mainimage} />
             <S.MainWrapper>
               <S.logo>
                 삑<S.sublogo>삑에 로그인</S.sublogo>
               </S.logo>
               <S.loginobj>
-                <S.id placeholder="아이디" onChange={handleId} value={id} />
-                <S.ps placeholder="비밀번호" onChange={handlePw} value={pw} type="password" />
+                <S.id placeholder="아이디" name="id" onChange={hooks.handleLoginData} value={hooks.loginData.id} />
+                <S.ps
+                  placeholder="비밀번호"
+                  type="password"
+                  name="pw"
+                  onChange={hooks.handleLoginData}
+                  value={hooks.loginData.pw}
+                />
                 <S.LoginMaintainWrap>
-                  <S.LoginMaintain type="checkbox" onChange={handleLoggedIn} />
+                  <S.LoginMaintain type="checkbox" onChange={hooks.handleLoggedIn} />
                   <span>로그인 유지</span>
                 </S.LoginMaintainWrap>
-                <S.LoginButton onClick={onclickConfirmButton}>로그인</S.LoginButton>
+                <S.LoginButton onClick={hooks.onClickConfirmButton}>로그인</S.LoginButton>
               </S.loginobj>
             </S.MainWrapper>
           </S.Main>

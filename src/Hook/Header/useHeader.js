@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const useHeader = ({ location, navigate }) => {
   const [isClicked, setIsClicked] = useState();
+  const [isProfile, setIsProfile] = useState(false);
 
   useEffect(() => {
     switch (location.pathname) {

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Main = styled.div`
   width: 100vw;
@@ -123,4 +123,61 @@ export const TeacherPosition = styled.span`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+`;
+
+const showInfo = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`;
+
+export const MemberInfoWrap = styled.div`
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+
+  width: calc(100vw - 85vw);
+  height: calc(100vh - 90vh);
+
+  background-color: #303a46;
+
+  top: 10vh;
+  left: 85vw;
+
+  animation: ${showInfo} 1s ease-out;
+
+  justify-content: space-evenly;
+`;
+
+export const MemberInfo = styled.div`
+  display: flex;
+  align-items: center;
+  align-self: center;
+`;
+
+export const EmailInfo = styled.span`
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+`;
+
+export const SignOut = styled.span`
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  color: red;
 `;
