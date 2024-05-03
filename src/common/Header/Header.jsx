@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "../../constants/Header/style/Header.style";
+import * as S from "../../common/Header/style/Header.style";
 import Logo from "../../assets/img/Logo.svg";
 import SearchIcon from "../../assets/img/SeachIcon.png";
 import DropDownStudent from "../../assets/img/DropDownStudent.png";

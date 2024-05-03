@@ -32,8 +32,8 @@ const useLogin = () => {
           password: loginData.pw,
         })
         .then((res) => {
-          Cookies.set("accessToken", res.data.accessToken);
-          Cookies.set("refreshToken", res.data.refreshToken);
+          Cookies.set("bbeep-access-token", res.data.accessToken);
+          Cookies.set("bbeep-refresh-token", res.data.refreshToken);
           showToast("sucess", "로그인 성공!");
           navigate("/main");
         });

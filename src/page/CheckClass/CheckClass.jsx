@@ -1,5 +1,5 @@
 import React from "react";
-import SideBar from "../../constants/SideBar/CheckClass/index";
+import SideBar from "../../common/SideBar/CheckClass/index";
 import * as S from "./style/style";
 import useCheckClass from "../../Hook/CheckStudent/useCheckStudent";
 import Floor1 from "../../assets/img/1.svg";

@@ -70,7 +70,7 @@ const useCheckClass = () => {
           grade: `${Number(isClickCategory.substring(0, 1))}`,
           cls: `${Number(isClickMenu.substring(0, 1))}`,
         };
-        const response = await axios.get(`서버주소`, {
+        const response = await axios.get(`${CONFIG.serverUrl}`, {
           headers: {
             Authorization: `Bearer ${Cookies.get("accessToken")}`,
           },

@@ -1,5 +1,5 @@
 import React from "react";
-import StudentSideBar from "../../constants/SideBar/CheckStudent/SideBar";
+import StudentSideBar from "../../common/SideBar/CheckStudent/SideBar";
 import * as S from "../style/CheckStudent.style";
 import ClassOne from "../../assets/img/Class1.svg";
 import ClassOneD from "../../assets/img/Class1d.svg";

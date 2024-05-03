@@ -21,15 +21,15 @@ const useInfo = () => {
 
   const getMemberInfo = async () => {
     try {
-      const response = await axios.get(`${CONFIG}teacher/info`, {
+      const response = await axios.get(`${CONFIG.serverUrl}/teacher`, {
         headers: {
-          Authorization: Cookies.get("accessToken"),
+          Authorization: `Bearer ${Cookies.get("bbeep-access-token")}`,
         },
       });
       if (response.status !== 200) {
         showToast("error", "멤버 정보 불러오기 실패");
       } else {
-        setName(response.data.firstname + response.data.lastanme);
+        setName(response.data.name);
         setEmail(response.data.email);
         setDepartment(response.data.department);
         setJob(response.data.job);
@@ -40,15 +40,15 @@ const useInfo = () => {
   };
 
   const LogOut = async () => {
-    const reponse = await axios.delete(`${CONFIG.serverUrl}auth/logout`, {
+    const reponse = await axios.delete(`${CONFIG.serverUrl}/auth/logout`, {
       headers: {
-        Authorization: Cookies.get("accessToken"),
+        Authorization: Cookies.get("bbeep-access-token"),
       },
     });
     if (reponse.status === 200) {
       showToast("로그아웃 성공!");
-      Cookies.remove("accessToken");
-      Cookies.remove("refreshToken");
+      Cookies.remove("bbeep-access-token");
+      Cookies.remove("bbeep-refresh-token");
     }
   };
 
