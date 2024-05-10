@@ -4,6 +4,8 @@ import CONFIG from "../../config/config.json";
 import Cookies from "js-cookie";
 import { showToast } from "../../lib/Swal/Swal";
 import { useNavigate } from "react-router-dom";
+import Token from "../../Hook/token/Token";
+
 const useLogin = () => {
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
@@ -39,25 +41,8 @@ const useLogin = () => {
         });
     } catch (error) {
       if (error.resposne && error.status === 401) {
-        try {
-          const accessToken = Cookies.get("accessToken");
-          const refreshResponse = await axios.post(`${CONFIG.serverUrl}auth/refresh`, {
-            accessToken,
-          });
-          if (refreshResponse.status === 200) {
-            showToast("success", "토큰 재발급 성공");
-            const newAccessToken = refreshResponse.accessToken;
-            Cookies.remove("accessToken");
-            Cookies.set("accessToken", newAccessToken);
-          } else {
-            showToast("error", "토큰 재발급 실패");
-          }
-        } catch (refreshError) {
-          console.error(refreshError);
-        }
-      } else {
-        showToast("error", "로그인 실패");
-        console.error(error);
+        const refreshToken = Cookies.get("bbeep-refresh-token");
+        Token(refreshToken);
       }
     }
   };
