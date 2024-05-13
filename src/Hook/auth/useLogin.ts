@@ -1,21 +1,22 @@
-import axios from "axios";
-import React, { useCallback, useState } from "react";
+import axios, { AxiosError } from "axios";
+import React, { ChangeEvent, useCallback, useState } from "react";
 import CONFIG from "../../config/config.json";
 import Cookies from "js-cookie";
 import { showToast } from "../../lib/Swal/Swal";
 import { useNavigate } from "react-router-dom";
-import Token from "../../Hook/token/Token";
+import Token from "../token/Token";
+import { LoginData } from "src/types/auth/auth.types";
 
 const useLogin = () => {
   const navigate = useNavigate();
-  const [loginData, setLoginData] = useState({
+  const [loginData, setLoginData] = useState<LoginData>({
     id: "",
     pw: "",
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLoginData = useCallback(
-    (e) => {
+    (e: ChangeEvent<HTMLInputElement>) => {
       const { name, value } = e.target;
       setLoginData((prev) => ({ ...prev, [name]: value }));
     },
@@ -39,12 +40,7 @@ const useLogin = () => {
           showToast("sucess", "로그인 성공!");
           navigate("/main");
         });
-    } catch (error) {
-      if (error.resposne && error.status === 401) {
-        const refreshToken = Cookies.get("bbeep-refresh-token");
-        Token(refreshToken);
-      }
-    }
+    } catch (errorx) {}
   };
 
   return {

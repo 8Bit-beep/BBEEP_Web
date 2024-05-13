@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import CONFIG from "../../config/config.json";
 import Cookies from "js-cookie";
 import { showToast } from "../../lib/Swal/Swal";
+import { useNavigate } from "react-router-dom";
+import useLogin from "../auth/useLogin";
 
 const useInfo = () => {
   const [isProfile, setIsProfile] = useState(false);
@@ -10,6 +12,8 @@ const useInfo = () => {
   const [email, setEmail] = useState();
   const [department, setDepartment] = useState();
   const [job, setJob] = useState();
+  const { loginData } = useLogin();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getMemberInfo();
@@ -21,7 +25,7 @@ const useInfo = () => {
 
   const getMemberInfo = async () => {
     try {
-      const response = await axios.get(`${CONFIG.serverUrl}/teacher`, {
+      const response = await axios.get(`${CONFIG.serverUrl}/teachers/info`, {
         headers: {
           Authorization: `Bearer ${Cookies.get("bbeep-access-token")}`,
         },
@@ -40,15 +44,19 @@ const useInfo = () => {
   };
 
   const LogOut = async () => {
-    const reponse = await axios.delete(`${CONFIG.serverUrl}/auth/logout`, {
+    const reponse = await axios.delete(`${CONFIG.serverUrl}/users`, {
       headers: {
         Authorization: Cookies.get("bbeep-access-token"),
+      },
+      data: {
+        password: loginData.pw,
       },
     });
     if (reponse.status === 200) {
       showToast("로그아웃 성공!");
       Cookies.remove("bbeep-access-token");
       Cookies.remove("bbeep-refresh-token");
+      navigate("/");
     }
   };
 

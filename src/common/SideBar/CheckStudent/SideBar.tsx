@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "../style/SideBar.style.jsx";
-import Header from "../../Header/Header.jsx";
+import Header from "../../Header/Header.js";
 import FirstGradeImg from "../../../assets/img/1.svg";
 import SecondGradeImg from "../../../assets/img/2.svg";
 import ThirdGradeImg from "../../../assets/img/3.svg";

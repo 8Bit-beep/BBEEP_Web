@@ -62,19 +62,16 @@ const useCheckClass = () => {
   const [isClickMenu, setIsClickMenu] = useState("");
   const [studentClassList, setStudentClassList] = useState([{}]);
   const { isClickCategory } = UseSideBarNavigation({ location, navigate });
+  const grade = Number(isClickCategory.substring(0, 1));
+  const cls = Number(isClickMenu.substring(0, 1));
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const params = {
-          grade: `${Number(isClickCategory.substring(0, 1))}`,
-          cls: `${Number(isClickMenu.substring(0, 1))}`,
-        };
-        const response = await axios.get(`${CONFIG.serverUrl}`, {
+        const response = await axios.get(`${CONFIG.serverUrl}/students/cls?grade=${grade}`, {
           headers: {
             Authorization: `Bearer ${Cookies.get("accessToken")}`,
           },
-          params,
         });
         setStudentClassList(...response.data);
         console.log(studentClassList);
@@ -85,7 +82,7 @@ const useCheckClass = () => {
     fetchData();
   }, [isClickCategory, isClickMenu]);
 
-  const handleClickMenu = (itemName) => {
+  const handleClickMenu = (itemName: string) => {
     setIsClickMenu((prevItem) => (prevItem === itemName ? null : itemName));
   };
 
